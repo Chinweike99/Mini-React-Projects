@@ -1,0 +1,1 @@
+This directory contains basic projects/tasks on reactjs for more comprehension
