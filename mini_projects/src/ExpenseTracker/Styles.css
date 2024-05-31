@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+
+}
+.App{
+    background: linear-gradient(122deg, rgb(236, 187, 187), rgb(180, 243, 180));
+    margin: 50px 150px;
+    height: 100vh;
+    padding: 10px;
+}
+h3{
+    font-size: 30px;
+}
+#balance{
+    color: yellow;
+    margin-top: -20px;
+}
+.inc-expenses{
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin-top: -15px;
+}
+.inc-expenses div{
+    margin: 0 30px;
+    padding: 0 0px;
+}
+#money-plus, #money-minus{
+    margin-top: -18px;
+    font-weight: 900;
+    font-size: 25px;
+}
+ul{
+    background-color: #fff;
+    padding: 5px;
+    font-size: 18px;
+    border-right: 4px solid red;
+    outline: none;
+}
+ul li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}

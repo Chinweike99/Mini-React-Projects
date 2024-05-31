@@ -1,5 +1,6 @@
 import '../App.css';
 import React, { useState } from 'react';
+import { ChangeName } from './ChangeName';
 
 function App() {
     const [username, setUsername] = useState("");
@@ -18,6 +19,7 @@ function App() {
       type='text' placeholder='Your Username'
       onChange={handleInput}/>
       <p>Hi {username}</p>
+      <ChangeName username={username} setUsername={setUsername}/>
     </div>
   );
 }
