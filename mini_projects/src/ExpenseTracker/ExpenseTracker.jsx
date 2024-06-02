@@ -5,15 +5,18 @@ import { IncomeExpenses } from "./IncomeExpensex";
 import './Styles.css';
 import { TransactionList } from "./TransactionList";
 import { AddTransaction } from "./AddTransaction";
+import { GlobalProvider } from "../Context/GlobalState";
 
 function App(){
     return(
         <div className="App">
-            <Header />
-            <Balance />
-            <IncomeExpenses />
-            <TransactionList />
-            <AddTransaction />
+            <GlobalProvider>
+                <Header />
+                <Balance />
+                <IncomeExpenses />
+                <TransactionList />
+                <AddTransaction />
+            </GlobalProvider>
         </div>
     )
 }
