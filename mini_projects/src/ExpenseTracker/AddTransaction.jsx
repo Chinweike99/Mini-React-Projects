@@ -17,7 +17,7 @@ export const AddTransaction = () => {
         };
         addTransaction(newTransaction);
     };
-
+ 
     return (
         <div>
             <h4>Add new transaction</h4>

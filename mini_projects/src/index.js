@@ -4,13 +4,15 @@ import ReactDOM from 'react-dom/client';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import App from './State_Props/State'
-import App from './ExpenseTracker/ExpenseTracker'
+// import App from './ExpenseTracker/ExpenseTracker'
 import './ExpenseTracker/Styles.css'
+import Tracker from './SecondTracker/ExpenseTracker';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <Tracker />
   </React.StrictMode>
 );
 
