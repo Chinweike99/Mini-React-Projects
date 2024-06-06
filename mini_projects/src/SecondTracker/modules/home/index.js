@@ -16,7 +16,6 @@ const HomeComponent = (props) => {
     const [expense, updateExpense] = useState(0);
     const [income, updateIncome] = useState(0);
 
-
     const addTransaction = (payload) => {
         const transactionArray = [...transactions];
         transactionArray.push(payload);

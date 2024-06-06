@@ -1,0 +1,127 @@
+*{
+    top: 0;
+    margin: 0;
+}
+.container{
+    align-items: center;
+    background-color: rgb(139, 214, 214);
+    padding: 20px 250px; 
+}
+.container h1{
+    text-align: center;
+}
+
+
+/*TRANSACTION INFO */
+.transactionInfo{
+    background: rgb(206, 232, 232);
+    margin: 20px auto;
+    padding: 0 35px;
+}
+.transactionInfo div{
+    padding: 15px 35px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    font-weight: 200;
+}
+.transactionInfo p{
+    font-size: 25px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/*TRANSACTION DETAILS*/
+.txnDet{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.txnDet .addBtn{ 
+    justify-content: center;
+    display: flex;
+    align-self: flex-end;
+    background: black;
+    color: #fff;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+}
+.txnDet input, button{
+    border: 1px solid grey;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px solid none;
+    outline: none;
+    font-size: 17px;
+    background: rgb(206, 232, 232);
+}
+.txnDet button{
+    background: rgb(4, 67, 41);
+    color: #fff;
+    font-weight: bold;
+}
+
+form .radio{
+    display: flex;
+    justify-content: space-between;
+    background:  rgb(206, 232, 232);  
+    margin: 8px 25%;
+    padding: 10px;
+    gap: 3px;
+}
+.radio span{
+    display: flex;
+    border: 1px solid grey;
+    padding: 5px;
+    gap: 3px;
+    font-size: 17px;
+}
+
+
+/*TRANSACTION HISTORY*/
+.history{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 10px auto;
+    border: 2px solid #09864c;
+    padding: 15px;
+    background: linear-gradient(45deg, rgb(75, 150, 208), rgb(200, 232, 234), rgb(121, 185, 235));
+}
+.history input{
+    border: 1px solid grey;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px solid none;
+    outline: none;
+    font-size: 17px;
+    background: rgb(206, 232, 232);
+}
+h2{
+    margin: 20px 0;
+}
+ul{
+    padding: 5px;
+}
+ul li{
+    display: flex;
+    justify-content: space-between;
+    background: #809ca0;
+    padding: 5px;
+    font-size: 20px;
+}
+.income{
+    color:#09864c;
+}
+.expense{
+    color: red;
+}
