@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export const TransactionInfo = ({transactions =[]}) =>{
     // Calculate total income and expense
     const totalIncome = transactions.filter(transaction => transaction.type === "income")

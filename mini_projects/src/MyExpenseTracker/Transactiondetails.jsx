@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import './styles.css'
 import { TransactionInfo } from "./TransactionInfo";
-// import { TransactionInfo } from "./TransactionInfo";
+import { TransactionHistory } from "./TransactionHistory";
+
 
 export const Transactiondetails = () =>{
 
@@ -14,7 +15,7 @@ export const Transactiondetails = () =>{
       // Form component to capture transaction details (replace with your actual form component)
     const TransactionForm = () => {
         const [desc, setDesc] = useState('');
-        const [amount, setAmount] = useState();
+        const [amount, setAmount] = useState("");
         const [type, setType] = useState("income")
 
         const handleSubmit = (event) =>{
@@ -22,7 +23,7 @@ export const Transactiondetails = () =>{
             const newTxn = {desc, amount: parseFloat(amount), type};
             handleAddTxn(newTxn);
             setDesc("");
-            setAmount(0);
+            setAmount("");
             setType("income");
         };
 
@@ -48,21 +49,22 @@ export const Transactiondetails = () =>{
 
     return (
         <div className="txnDet">
+            
+            <TransactionInfo transactions={transactions} />
             <span className="addBtn" onClick={() => setTxnVisible(!isTxnVisible)}>{isTxnVisible
                      ? "CANCEL" : "ADD"}</span>
-            {isTxnVisible && <TransactionForm />}
-            <TransactionInfo transactions={transactions} /> {/*This line here is my problem, it keeps creating a new transactionInfo
-            div which i do not want, i want the transactionInfo div to have same position as it was*/}
+             {isTxnVisible && <TransactionForm />}
+             <TransactionHistory transactions={transactions}/>
             <h2>History</h2>
-            <ul>
-                {transactions.map((transaction) =>(
-                    <li key={transaction.desc} className={transaction.type}>
+            {/* <ul>
+                {transactions.map((transaction, index) =>(
+                    <li key={index} className={transaction.type}>
                         <span>{transaction.desc}</span>
                         <span>${transaction.amount}</span>
                         <span>{transaction.type}</span>
                     </li>
                 ))}
-            </ul>
+            </ul> */}
         </div>
     );
 }

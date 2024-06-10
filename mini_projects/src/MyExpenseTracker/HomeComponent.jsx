@@ -6,9 +6,9 @@ import { TransactionHistory } from "./TransactionHistory";
 export const HomeComponent = () => {
     return(
         <div>
-            <TransactionInfo />
-            <TransactionHistory />
+            {/* <TransactionInfo /> */}
             <Transactiondetails />
+            {/* <TransactionHistory /> */}
         </div>
     )
 }

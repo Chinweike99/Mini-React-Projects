@@ -55,9 +55,9 @@ const TransactionComponent = (props) => {
     );
     updateTxn(txn)
     };
-
     useEffect(() => filterData(searchText), [props.transactions])
 
+    
     return (
         <Container>
             Transactions
