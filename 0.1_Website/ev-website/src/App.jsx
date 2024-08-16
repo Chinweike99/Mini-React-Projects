@@ -26,13 +26,13 @@ const App = () => {
 
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setHeroCount((count) => (count === 6 ? 0 : count + 1));
-    }, 3000);
-  
-    return () => clearInterval(intervalId); // Clear the interval on component unmount
-  }, []);
-  
+  const intervalId = setInterval(() => {
+    setHeroCount((count) => (count === 6 ? 0 : count + 1));
+  }, 3000);
+
+  return () => clearInterval(intervalId); // Clear the interval on component unmount
+}, []);
+
 
 
   return (
