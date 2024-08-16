@@ -1,9 +1,15 @@
 import './Hero.css'
+import arrowBtn from '../../assets/arrowBtn.png'
+import pauseIcon from '../../assets/pauseIcon.png'
+import playIcon from '../../assets/playIcon.png'
 
-const Hero = () => {
+const Hero = ({setPlayVid, heroData, setHeroCount, heroCount, playVid}) => {
     return (
-      <div>
-  
+      <div className='hero'>
+        <div className="heroText">
+          <p>{heroData.text1}</p>
+          <p>{heroData.text2}</p>
+        </div>
       </div>
     )
   }
