@@ -1,0 +1,96 @@
+.hero{
+    margin:  0px 120px;
+    margin-top: 270px;
+    margin-bottom: 100px;
+}
+.heroText{
+    color: #fff;
+    font-size: 90px;
+    line-height: 90px;
+    font-weight: 600;
+}
+.heroExplore{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-size: 30px;
+    width: fit-content;
+    margin-top: 70px;
+    padding: 2px 8px;
+    padding-left: 30px;
+    border-radius: 60px;
+    background: white;
+    cursor: pointer;
+}
+.heroExplore img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.heroExplore:hover{
+    background: #333;
+    color: #fff;
+    transition: all 0.6s ease-in-out;
+}
+.heroDotPlay{
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heroDotPlay .heroDots{
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    list-style: none;
+}
+.heroDots .hero-dot{
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.heroDots .orange{
+    background: rgba(197, 8, 90, 0.975);
+    width: 16px;
+    height: 16px;
+    border: 3px solid #fff;
+    animation: fadeIn 0.8s ease-in-out;
+
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.heroPlay{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px;
+    background: #333;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.heroPlay:hover{
+    background: rgba(198, 235, 217, 0.975);
+    transition: all 0.5s ease-in;
+    color: black;
+}
+.heroPlay img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.heroPlay p{
+    color: #fff;
+    font-size: 25px;
+}
+.heroPlay p:hover{
+    color: black;
+    font-weight: 800;
+    transition: all 0.5s ease-in;
+}
