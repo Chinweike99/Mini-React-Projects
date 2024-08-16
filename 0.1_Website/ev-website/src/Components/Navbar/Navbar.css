@@ -1,0 +1,12 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 120px;
+    color: white;
+}
+.navLogo{
+    font-family: Oufit;
+    font-size: 43px;
+    font-weight: 700;
+}

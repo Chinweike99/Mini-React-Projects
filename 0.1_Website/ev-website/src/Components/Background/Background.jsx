@@ -1,12 +1,12 @@
 import './Background.css'
 import video1 from '../../assets/video1.webm'
-import img1 from '../../assets/img1.jpeg'
-import img2 from '../../assets/img2.jpeg'
-import images from '../../assets/images.jpeg'
-import images3 from '../../assets/images3.jpeg'
-import images4 from '../../assets/images4.jpeg'
-import images5 from '../../assets/images5.jpeg'
-import images6 from '../../assets/images6.jpeg'
+import img1 from '../../assets/img1.jpg'
+import img2 from '../../assets/img2.jpg'
+import images7 from '../../assets/images7.jpg'
+import images3 from '../../assets/images3.jpg'
+import images4 from '../../assets/images4.jpg'
+import images5 from '../../assets/images5.jpg'
+import images6 from '../../assets/images6.jpg'
 
 const Background = ({playVid, heroCount}) => {
     if (playVid){
@@ -17,7 +17,7 @@ const Background = ({playVid, heroCount}) => {
       )
     }
     else if(heroCount === 0 ){
-      return <img src={images} alt='car image' className='bgConponent' />
+      return <img src={images7} alt='car image' className='bgConponent' />
     }else if(heroCount === 1 ){
       return <img src={img1} alt='car image' className='bgConponent' />
     }else if(heroCount === 2 ){
