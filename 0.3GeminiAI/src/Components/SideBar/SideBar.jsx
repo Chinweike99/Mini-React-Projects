@@ -27,6 +27,14 @@ const SideBar = () => {
                 <img src={assets.circleQuestion} alt="" />
                 <p>Help</p>
             </div>
+            <div className="bottomItem recentEntry">
+                <img src={assets.clockRotateLeft} alt="" />
+                <p>History</p>
+            </div>
+            <div className="bottomItem recentEntry">
+                <img src={assets.gearSolid} alt="" />
+                <p>Settings</p>
+            </div>
         </div>
     </div>
   )
