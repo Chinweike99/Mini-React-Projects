@@ -1,11 +1,14 @@
 import { useState } from 'react'
+import SideBar from './Components/SideBar/SideBar'
+import barsSolid from './assets/barsSolid.svg'
+
 function App() {
 
   return (
-    <div className='App'>
-      
-    </div>
+    <>
+      <SideBar />
+    </>
   )
 }
 
-export default App
+export default App;

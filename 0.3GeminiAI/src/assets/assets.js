@@ -5,7 +5,7 @@ import clockRotateLeft from './clockRotateLeft.svg'
 import codeSolid from './codeSolid.svg'
 import compassRegular from './compassRegular.svg'
 import gearSolid from './gearSolid.svg'
-import geminiIcon from './geminiIcon.svg'
+import geminiIcon from './geminiIcon.png'
 import images from './images.jpg'
 import imagesSolid from './imagesSolid.svg'
 import lightbulb from './lightbulb.svg'
@@ -14,7 +14,7 @@ import messageSolid from './messageSolid.svg'
 import microphoneSolid from './microphoneSolid.svg'
 import paperPlane from './paperPlane.svg'
 import plusSolid from './plusSolid.svg'
-import youtubeBrand from './youtubeBrand.svg'
+import youtubeBrands from './youtubeBrands.svg'
 
 
 export const assets = {
@@ -34,5 +34,5 @@ export const assets = {
     microphoneSolid,
     paperPlane,
     plusSolid,
-    youtubeBrand
+    youtubeBrands
 }
