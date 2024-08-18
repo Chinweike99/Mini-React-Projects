@@ -8,7 +8,7 @@ const ContextProvider = (props) =>{
     const onSent = async (prompt)=>{
         await run(prompt);
     }
-    onSent("What is nodejs")
+    onSent("Is earth fromation not spiritual?")
     const contextValue = {
 
     }
