@@ -6,6 +6,7 @@
     /* padding-bottom: 15vh; */
     position: relative;
     align-items: center;
+    bottom: 0;
 }
 .main .nav{
     display: flex;
@@ -93,6 +94,25 @@
     bottom: 12px;
     right: 12px;
 }
+.main .searchBox{
+    padding: 5px 30px;
+}
+
+.main .searchResult{
+    display: flex;
+    margin: 10px auto;
+    text-align: justify;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: 1px solid #976560;
+    border-radius: 10px;
+    font-size: 19px;
+}
+.main .searchResult p{
+    font: 30px;
+}
+
 .mainBottom{
     padding: 5px 30px;
     margin: auto;
