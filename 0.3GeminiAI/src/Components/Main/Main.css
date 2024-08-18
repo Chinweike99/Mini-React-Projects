@@ -3,7 +3,7 @@
 .main{
     flex: 1;
     min-height: 100vh;
-    padding-bottom: 15vh;
+    /* padding-bottom: 15vh; */
     position: relative;
     align-items: center;
 }
@@ -40,7 +40,6 @@
     /* width: 80%; */
     display: flex;
     flex-direction: column;
-    background-color: rgb(160, 204, 189);
     margin: auto;
     padding: 20px;
 }
@@ -48,7 +47,7 @@
     margin: 50px 0px;
     font-size: 50px;
     font-family: Lobster;
-    /* color: #c4c7c5; */
+    color: #858486;
     padding: 20px;
     font-weight: 600;
 }
@@ -62,6 +61,7 @@
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
     padding: 20px;
+    margin-bottom: 70px;
     /* background: -webkit-linear-gradient(24deg,#0641a0,#f8220f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
@@ -77,7 +77,7 @@
     cursor: pointer;
 }
 .cards .card:hover{
-    background: linear-gradient(24deg,#0641a0,#f8220f);
+    background: linear-gradient(150deg,#0641a0,#f8220f);
     color: #fff;
     transition: all  0.9s ease-in-out;
     font-size: 18px;
@@ -92,4 +92,45 @@
     padding: 7px;
     bottom: 12px;
     right: 12px;
+}
+.mainBottom{
+    padding: 5px 30px;
+    margin: auto;
+    width: 100%;
+}
+.mainBottom .searchBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: rgb(224, 229, 254);
+    border-radius: 50px;
+}
+.searchBox input{
+    flex: 1;
+    outline: none;
+    background: transparent;
+    height: 40px;
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+}
+.bottomImages{
+    display: flex;
+    gap: 20px;
+}
+.bottomImages img{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: rgb(193, 214, 231);
+    padding: 8px;
+    border-radius: 25px;
+}
+.mainBottom .bottomInfo{
+    padding: 10px 20px;
+    color: #616465;
+    font-weight: 600;
+    margin: 15px auto;
+    text-align: center;
 }

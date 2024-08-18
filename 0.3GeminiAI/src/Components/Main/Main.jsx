@@ -12,11 +12,11 @@ const MainSection = () => {
             <div className="mainContainer">
                 <div className="salute">
                     <p><span>Hello, Dev .</span></p>
-                    <p>How can i assist you today</p>
+                    <p>How can i assist you today ?.</p>
                 </div>
                 <div className="cards">
                     <div className="card">
-                        <p>Gemini</p>
+                        <p>Gemini Ai, the world most advanced GPT</p>
                         <img src={assets.compassRegular} alt="" />
                     </div>
                     <div className="card">
@@ -36,12 +36,15 @@ const MainSection = () => {
                 <div className="mainBottom">
                     <div className="searchBox">
                         <input type="text"  placeholder="Enter prompt"/>
-                        <div className="">
+                        <div className="bottomImages">
                             <img src={assets.imagesSolid}alt="" />
                             <img src={assets.microphoneSolid}alt="" />
                             <img src={assets.paperPlane} alt="" />
                         </div>
                     </div>
+                    <p className="bottomInfo">
+                        Sometimes Informations can be inaccurate. Hence, endeavor to verify...
+                    </p>
                 </div>
             </div>
         </div>
