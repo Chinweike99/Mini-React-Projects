@@ -10,7 +10,7 @@ const SideBar = () => {
     const setMenubar = () => {
         setExtended(!extended);
     }
-
+    
     return (
 
         <div className='sideBar'>

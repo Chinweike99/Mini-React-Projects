@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import './Main.css'
 import { assets } from "../../assets/assets";
+import { Context } from "../../context/context";
 
 const MainSection = () => {
 
-    const [displayInput, setDisplayInput] = useState("");
-    const [pasteSearch, setPasteSearch] = useState("");
-    const [hiContents, setHideContents] = useState(true)
-
-    const hideContent = () =>{
-        setHideContents(false);
-    }
-    const handleSearch = () =>{
-        setPasteSearch(displayInput);
-        hideContent();
-    }
-
-
+    const {prevPrompt,
+        setPrevPrompt,
+        onSent,
+        setRecentPrompt,
+        recentPrompt,
+        showResult,
+        loading,
+        resultData,
+        input,
+        setInput,
+    } = useContext(Context)
 
     return (
         <div className="main">
@@ -25,13 +24,10 @@ const MainSection = () => {
                 <img src={assets.images} alt="" />
             </div>
             <div className="mainContainer">
-            {hiContents ?
                 <div className="salute">
-                    <p><span>Hello, Dev .</span></p> 
+                    <p><span>Hello, Dev .</span></p>
                     <p>How can i assist you today ?.</p>
                 </div>
-                : null}
-                {hiContents ?
                 <div className="cards">
                     <div className="card">
                         <p>Gemini Ai, the world most advanced GPT</p>
@@ -50,26 +46,14 @@ const MainSection = () => {
                         <img src={assets.codeSolid} alt="" />
                     </div>
                 </div>
-                : null}
-
-                <div className="searchBox">
-                <div className="searchResult">
-                    <p>{pasteSearch}</p>
-                </div>
-                </div>
 
                 <div className="mainBottom">
                     <div className="searchBox">
-                        <input type="text"  
-                        placeholder="Enter prompt"
-                        onChange={(e) => setDisplayInput(e.target.value)}
-                        />
+                        <input onChange={(e) => setInput(e.target.value)} value={input} type="text"  placeholder="Enter prompt"/>
                         <div className="bottomImages">
                             <img src={assets.imagesSolid}alt="" />
                             <img src={assets.microphoneSolid}alt="" />
-                            <img src={assets.paperPlane} alt="" 
-                            onClick={handleSearch}
-                            />
+                            <img onClick={() => onSent()} src={assets.paperPlane} alt="" />
                         </div>
                     </div>
                     <p className="bottomInfo">
