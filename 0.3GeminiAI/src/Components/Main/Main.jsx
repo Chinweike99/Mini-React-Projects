@@ -5,17 +5,7 @@ import { Context } from "../../context/context";
 
 const MainSection = () => {
 
-    const {prevPrompt,
-        setPrevPrompt,
-        onSent,
-        setRecentPrompt,
-        recentPrompt,
-        showResult,
-        loading,
-        resultData,
-        input,
-        setInput,
-    } = useContext(Context)
+    const {prevPrompt, setPrevPrompt, onSent, setRecentPrompt, recentPrompt, showResult, loading, resultData, input, setInput} = useContext(Context)
 
     return (
         <div className="main">
@@ -24,7 +14,10 @@ const MainSection = () => {
                 <img src={assets.images} alt="" />
             </div>
             <div className="mainContainer">
-                <div className="salute">
+
+                {!showResult ? 
+                <>
+                    <div className="salute">
                     <p><span>Hello, Dev .</span></p>
                     <p>How can i assist you today ?.</p>
                 </div>
@@ -46,6 +39,8 @@ const MainSection = () => {
                         <img src={assets.codeSolid} alt="" />
                     </div>
                 </div>
+                </>
+                : null}
 
                 <div className="mainBottom">
                     <div className="searchBox">
