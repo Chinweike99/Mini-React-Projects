@@ -15,6 +15,7 @@ import microphoneSolid from './microphoneSolid.svg'
 import paperPlane from './paperPlane.svg'
 import plusSolid from './plusSolid.svg'
 import youtubeBrands from './youtubeBrands.svg'
+import userSolid from './userSolid.svg'
 
 
 export const assets = {
@@ -34,5 +35,6 @@ export const assets = {
     microphoneSolid,
     paperPlane,
     plusSolid,
-    youtubeBrands
+    youtubeBrands,
+    userSolid
 }

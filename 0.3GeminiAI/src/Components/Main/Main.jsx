@@ -40,11 +40,30 @@ const MainSection = () => {
                     </div>
                 </div>
                 </>
-                : null}
+                : <div className="result">
+                    <div className="resultTitle">
+                        <img src={assets.images} alt="" />
+                        <p>{recentPrompt}</p>
+                    </div>
+                    <div className="resultData">
+                        <img src={assets.geminiIcon} alt="" />
+                        {loading? 
+                            <div className="loader">
+                                <hr />
+                                <hr />
+                                <hr />
+                            </div>
+                        : <p dangerouslySetInnerHTML={{__html:resultData}}></p> 
+                        }
+                        
+                    </div>
+                </div>
+                    
+                }
 
                 <div className="mainBottom">
                     <div className="searchBox">
-                        <input onChange={(e) => setInput(e.target.value)} value={input} type="text"  placeholder="Enter prompt"/>
+                        <input onChange={(e) => setInput(e.target.value)} value={input} type="text"  placeholder="Enter prompt" autoFocus/>
                         <div className="bottomImages">
                             <img src={assets.imagesSolid}alt="" />
                             <img src={assets.microphoneSolid}alt="" />
