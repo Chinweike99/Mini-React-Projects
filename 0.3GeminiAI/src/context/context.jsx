@@ -6,11 +6,11 @@ export const Context = createContext();
 const ContextProvider = (props) =>{
 
     const [input, setInput] = useState("");
-    const [recentPrompt, setRecentPrompt] = useState("");
+    const [recentPrompt, setRecentPrompt] = useState([]);
     const [prevPrompt, setPrevPrompt] = useState([]);
     const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false)
-    const [resultData, setResultData] = useState("")
+    const [resultData, setResultData] = useState([])
 
     // ADD TYPING EFFECT ON displaying answer from Gemini
     const delayTyping = (index, nextWord) =>{
@@ -20,7 +20,7 @@ const ContextProvider = (props) =>{
     }
 
     const onSent = async (prompt)=>{
-        setResultData("");
+        setResultData([]);
         setLoading(true);
         setShowResult(true);
 
@@ -30,16 +30,17 @@ const ContextProvider = (props) =>{
             response = await run(prompt);
             setRecentPrompt(prompt);
         }else{
-            setPrevPrompt(prev=>[...prev,input]);
-            setRecentPrompt(input);
+            setPrevPrompt(prev=>[...prev, input]);
+            setRecentPrompt(prev=>[...prev, input]);
+            setResultData(prev=>[...prev, input])
+            // setRecentPrompt(input);
             response = await run(input);
-
         }
 
 
         // setRecentPrompt(input) // this line
         // setPrevPrompt(prev=>[...prev, input])
-        
+
         let responseArray = response.split("**");
         let newResponse = "";
         for(let i = 0; i < responseArray.length; i++){

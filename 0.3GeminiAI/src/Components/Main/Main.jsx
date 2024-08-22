@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import './Main.css'
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/context";
@@ -6,6 +6,11 @@ import { Context } from "../../context/context";
 const MainSection = () => {
 
     const {prevPrompt, setPrevPrompt, onSent, setRecentPrompt, recentPrompt, showResult, loading, resultData, input, setInput} = useContext(Context)
+
+    const [saveOutput, setSaveOutput] = useState("")
+    const saveRecent = () => {
+        setSaveOutput(resultData)
+    }
 
     return (
         <div className="main">
@@ -41,10 +46,23 @@ const MainSection = () => {
                 </div>
                 </>
                 : <div className="result">
-                    <div className="resultTitle">
+                    {recentPrompt.map((items, index) =>{
+                        return(
+                            < >
+                                <div className="resultTitle" key={index}>
+                                    <img src={assets.images} alt="" />
+                                    <p>{items}</p>
+                                    
+                                </div>
+                            </>
+                        ) 
+                    })}
+
+                    {/* <div className="resultTitle">
                         <img src={assets.images} alt="" />
                         <p>{recentPrompt}</p>
-                    </div>
+                    </div> */}
+                    
                     <div className="resultData">
                         <img src={assets.geminiIcon} alt="" />
                         {/* ADDING LOADING STATE IF THE RESULT IS NOT YET AVAILABLE */}
