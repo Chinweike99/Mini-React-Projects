@@ -47,6 +47,7 @@ const MainSection = () => {
                     </div>
                     <div className="resultData">
                         <img src={assets.geminiIcon} alt="" />
+                        {/* ADDING LOADING STATE IF THE RESULT IS NOT YET AVAILABLE */}
                         {loading? 
                             <div className="loader">
                                 <hr />
@@ -67,7 +68,7 @@ const MainSection = () => {
                         <div className="bottomImages">
                             <img src={assets.imagesSolid}alt="" />
                             <img src={assets.microphoneSolid}alt="" />
-                            <img onClick={() => onSent()} src={assets.paperPlane} alt="" />
+                            {input? <img onClick={() => onSent()} src={assets.paperPlane} alt="" /> : null}
                         </div>
                     </div>
                     <p className="bottomInfo">

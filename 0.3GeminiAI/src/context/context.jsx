@@ -12,6 +12,7 @@ const ContextProvider = (props) =>{
     const [loading, setLoading] = useState(false)
     const [resultData, setResultData] = useState("")
 
+    // ADD TYPING EFFECT ON displaying answer from Gemini
     const delayTyping = (index, nextWord) =>{
         setTimeout(function(){
             setResultData(prev => prev+nextWord);
@@ -22,10 +23,25 @@ const ContextProvider = (props) =>{
         setResultData("");
         setLoading(true);
         setShowResult(true);
-        setRecentPrompt(input) // this line
-        const response = await run(input);
+
+        // To display Recent entered Prompts
+        let response;
+        if(prompt !== undefined){
+            response = await run(prompt);
+            setRecentPrompt(prompt);
+        }else{
+            setPrevPrompt(prev=>[...prev,input]);
+            setRecentPrompt(input);
+            response = await run(input);
+
+        }
+
+
+        // setRecentPrompt(input) // this line
+        // setPrevPrompt(prev=>[...prev, input])
+        
         let responseArray = response.split("**");
-        let newResponse;
+        let newResponse = "";
         for(let i = 0; i < responseArray.length; i++){
             if(i === 0 || i % 2 !== 1){
                 newResponse += responseArray[i];
@@ -48,6 +64,7 @@ const ContextProvider = (props) =>{
         prevPrompt,
         setPrevPrompt,
         onSent,
+        setShowResult,
         setRecentPrompt,
         recentPrompt,
         showResult,

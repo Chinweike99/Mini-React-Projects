@@ -6,8 +6,22 @@
   box-sizing: border-box;
   font-family: Outfit;
 }
+body{
+  background: rgb(193, 214, 231);
+}
 #root{
   background: rgb(193, 214, 231);
   min-height: 100vh;
   display: flex;
+  animation: fadeIn 1.8s;
+}
+
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

@@ -1,32 +1,44 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import './SideBar.css'
 import { assets } from '../../assets/assets';
+import { Context } from '../../context/context';
 
 
 const SideBar = () => {
 
     const [extended, setExtended] = useState(false);
+    const {prevPrompt, setPrevPrompt, onSent, setShowResult, setRecentPrompt, recentPrompt, showResult, loading, resultData, input, setInput} = useContext(Context)
 
     const setMenubar = () => {
         setExtended(!extended);
     }
     
+    const loadPrompt = async (prompt) =>{
+        setRecentPrompt(prompt)
+        await onSent(prompt)
+    }
+
     return (
 
         <div className='sideBar'>
             <div className="top">
                 <img onClick={setMenubar} className='menu' src={assets.barsSolid} alt="" />
-                <div className="newChat">
+                <div onClick={()=>setShowResult(false)} className="newChat">
                     <img src={assets.plusSolid} alt="" />
                     {extended ? <p>New chat</p> : null}
                 </div>
                 {extended ?
                     <div className="recent">
                         <p className="recentTitle">Recent</p>
-                        <div className="recentEntry">
-                            <img src={assets.message} alt="" />
-                            <p>What is Nodejs ..</p>
-                        </div>
+                        {prevPrompt.map((item,index) => {
+                            return (
+                                <div onClick={() => loadPrompt(item)} className="recentEntry" key={index}>
+                                    <img src={assets.message} alt="" />
+                                    <p >{item.slice(0,18)} ...</p>
+                                </div>
+                            )
+                        })}
+                        
                     </div>
                     : null}
             </div>

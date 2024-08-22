@@ -30,6 +30,7 @@
 .sideBar .recent{
     display: flex;
     flex-direction: column;
+    animation: fadeIn 1.8s;
 }
 .recent .recentTitle{
     margin-top: 30px;
@@ -55,7 +56,13 @@
     display: flex;
     flex-direction: column;
 }
-/* .bottom .bottomItem {
+.bottom .bottomItem {
     padding-right: 10px;
     cursor: pointer;
-} */
+}
+
+@media (max-width:600px){
+    .sideBar{
+        display: none;
+    }
+}
