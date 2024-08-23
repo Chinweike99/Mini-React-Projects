@@ -25,13 +25,14 @@ app.get("/", (req, res) => {
     res.send("Hello")
 })
 
-app.post("/login", async(req, res) => {
+// SIGN UP
+app.post("/signup", async(req, res) => {
     const {username, email, password} = req.body;
     try {
         const response = await db.query("INSERT INTO gemini(username, email, password) VALUES($1, $2, $3)",[username, email, password]);
         res.send(response);
     } catch (error) {
-        console.error
+        console.error(error.message)
     }
 })
 
