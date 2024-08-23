@@ -5,18 +5,23 @@ import { Context } from "../../context/context";
 
 const MainSection = () => {
 
-    const {prevPrompt, setPrevPrompt, onSent, setRecentPrompt, recentPrompt, showResult, loading, resultData, input, setInput} = useContext(Context)
+    const {prevPrompt, setPrevPrompt, onSent, setRecentPrompt, recentPrompt, showResult, loading, resultData, input, setInput, saveRecent} = useContext(Context)
 
-    const [saveOutput, setSaveOutput] = useState("")
-    const saveRecent = () => {
-        setSaveOutput(resultData)
-    }
+    const [hideLog, setHideLog] = useState(false);
+
 
     return (
         <div className="main">
             <div className="nav">
                 <p>Gemini</p>
-                <img src={assets.images} alt="" />
+                <img src={assets.images} alt="" onClick={() => setHideLog(!hideLog)}/>
+                {hideLog ? 
+                <div className="logOut">
+                    <p>owner of Account</p>
+                    <p>About</p>
+                    <button>Log Out</button>
+                </div>
+                : null }
             </div>
             <div className="mainContainer">
 
@@ -45,25 +50,13 @@ const MainSection = () => {
                     </div>
                 </div>
                 </>
-                : <div className="result">
-                    {recentPrompt.map((items, index) =>{
-                        return(
-                            < >
-                                <div className="resultTitle" key={index}>
-                                    <img src={assets.images} alt="" />
-                                    <p>{items}</p>
-                                    
-                                </div>
-                            </>
-                        ) 
-                    })}
-
-                    {/* <div className="resultTitle">
-                        <img src={assets.images} alt="" />
-                        <p>{recentPrompt}</p>
-                    </div> */}
-                    
-                    <div className="resultData">
+                : <div className="result" >
+                        <div className="resultTitle">
+                            <img src={assets.images} alt="" />
+                            <p>{recentPrompt}</p>
+                        </div>
+                                
+                        <div className="resultData">
                         <img src={assets.geminiIcon} alt="" />
                         {/* ADDING LOADING STATE IF THE RESULT IS NOT YET AVAILABLE */}
                         {loading? 
@@ -76,6 +69,28 @@ const MainSection = () => {
                         }
                         
                     </div>
+                            {/* </>
+                        ) 
+                    })} */}
+
+                    {/* <div className="resultTitle">
+                        <img src={assets.images} alt="" />
+                        <p>{recentPrompt}</p>
+                    </div> */}
+                    
+                    {/* <div className="resultData">
+                        <img src={assets.geminiIcon} alt="" /> */}
+                        {/* ADDING LOADING STATE IF THE RESULT IS NOT YET AVAILABLE */}
+                        {/* {loading? 
+                            <div className="loader">
+                                <hr />
+                                <hr />
+                                <hr />
+                            </div>
+                        : <p dangerouslySetInnerHTML={{__html:resultData}}></p> 
+                        }
+                        
+                    </div> */}
                 </div>
                     
                 }

@@ -25,3 +25,7 @@ body{
     opacity: 1;
   }
 }
+
+.formDiv{
+  z-index: 100;
+}

@@ -10,7 +10,8 @@ const ContextProvider = (props) =>{
     const [prevPrompt, setPrevPrompt] = useState([]);
     const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false)
-    const [resultData, setResultData] = useState([])
+    const [resultData, setResultData] = useState("")
+    const [saveRecent, setSaveRecent] = useState([])
 
     // ADD TYPING EFFECT ON displaying answer from Gemini
     const delayTyping = (index, nextWord) =>{
@@ -20,7 +21,7 @@ const ContextProvider = (props) =>{
     }
 
     const onSent = async (prompt)=>{
-        setResultData([]);
+        setResultData("");
         setLoading(true);
         setShowResult(true);
 
@@ -30,11 +31,11 @@ const ContextProvider = (props) =>{
             response = await run(prompt);
             setRecentPrompt(prompt);
         }else{
-            setPrevPrompt(prev=>[...prev, input]);
-            setRecentPrompt(prev=>[...prev, input]);
-            setResultData(prev=>[...prev, input])
-            // setRecentPrompt(input);
+            setPrevPrompt(prev=>[...prev,input]);
+            // setRecentPrompt(prev=>[...prev, input]);
+            setRecentPrompt(input);
             response = await run(input);
+            // setSaveRecent(prev => [...prev, response]);
         }
 
 
@@ -59,6 +60,7 @@ const ContextProvider = (props) =>{
 
         setLoading(false);
         setInput("");
+        // setSaveRecent([])
     }
     
     const contextValue = {
@@ -73,6 +75,8 @@ const ContextProvider = (props) =>{
         resultData,
         input,
         setInput,
+        saveRecent,
+        setSaveRecent
     }
     return (
         <Context.Provider value={contextValue}>
