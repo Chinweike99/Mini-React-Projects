@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import './Auth.css'
-import '../../index.css'
+// import '../../index.css'
+import { useCookies } from 'react-cookie'
 
 const Auth = () => {
 
+    const [cookies, setCookie, removeCookie] = useCookies(null);
     const [isLogin, setIsLogin] = useState(false)
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState(null);
@@ -12,6 +14,7 @@ const Auth = () => {
     const [error, setError] = useState(null)
 
     console.log(username, email, password);
+    console.log(cookies)
 
     // FUNCTION TO VIEW LOGIN
     const viewLogin = (status) => {
@@ -33,6 +36,11 @@ const Auth = () => {
         const data = await response.json();
         if (data.detail){
             setError(data.detail);
+        }else{
+            setCookie("Email", data.email)
+            setCookie("AuthToken", data.token)
+
+            window.location.reload();
         }
     }
 
@@ -58,9 +66,10 @@ const Auth = () => {
                 
                 <form action="">
                     <h1 style={{color: !isLogin ? "green" : "#333"}}>{isLogin ? "Login" : "Sign Up.."}</h1>
-                    <input type="text" placeholder="Username"
+                    {!isLogin ? <input type="text" placeholder="Username"
                     onChange={(e)=>setUsername(e.target.value)}
                     required/>
+                    :null}
                     <input type="email" placeholder="@example.com"
                     onChange={(e)=> setEmail(e.target.value)}
                     required/>
