@@ -7,14 +7,11 @@ const Auth = () => {
 
     const [cookies, setCookie, removeCookie] = useCookies(null);
     const [isLogin, setIsLogin] = useState(false)
-    const [username, setUsername] = useState("");
+    const [username, setUsername] = useState(null);
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [confirmPass, setConfirmPass] = useState(null);
     const [error, setError] = useState(null)
-
-    console.log(username, email, password);
-    console.log(cookies)
 
     // FUNCTION TO VIEW LOGIN
     const viewLogin = (status) => {
@@ -38,8 +35,8 @@ const Auth = () => {
             setError(data.detail);
         }else{
             setCookie("Email", data.email)
-            setCookie("AuthToken", data.token)
             setCookie("Username", data.username);
+            setCookie("AuthToken", data.token)
             window.location.reload();
         }
     }

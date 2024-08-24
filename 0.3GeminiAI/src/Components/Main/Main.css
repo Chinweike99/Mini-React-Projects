@@ -115,6 +115,7 @@
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
     padding: 40px;
+    margin-bottom: 200px;
     /* margin-bottom: 70px; */
 }
 @media(max-width:600px){
@@ -206,7 +207,7 @@
     /* padding: 0px 5%; */
     max-height: 70vh;
     overflow-y: scroll;
-    margin-bottom: 130px;
+    margin-bottom: 180px;
 }
 .result::-webkit-scrollbar{
     display: none;
