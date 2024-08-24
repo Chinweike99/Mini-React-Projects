@@ -5,11 +5,51 @@ import '../../index.css'
 const Auth = () => {
 
     const [isLogin, setIsLogin] = useState(false)
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [confirmPass, setConfirmPass] = useState(null);
+    const [error, setError] = useState(null)
+
+    console.log(username, email, password);
 
     // FUNCTION TO VIEW LOGIN
-
     const viewLogin = (status) => {
         setIsLogin(status)
+    }
+
+    const handleSubmit = async (e, endpoint) => {
+        const {username, email, password} = req.body
+        e.preventDefault()
+        if(!isLogin && password !== confirmPass){
+            setError("Passwords do not match")
+            return
+        }
+        const response = await fetch(`${process.env.LOCAL_PORT}/${endpoint}`,{
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: req.body
+        });
+        const data = await response.json();
+        if (data.detail){
+            setError(data.detail);
+        }
+    }
+
+    const createAccount = async()=> {
+            const body = {username, email, password}
+
+        try {
+            const response = await fetch(`${process.env.LOCAL_PORT}`,{
+                method: "POST",
+                headers: {"Content-Type": "Application/json"},
+                body: JSON.stringify(body)
+            });
+            const data = await response();
+            console.log(data);
+        } catch (error) {
+            console.error(error.message)
+        }
     }
 
     return (
@@ -18,12 +58,21 @@ const Auth = () => {
                 
                 <form action="">
                     <h1 style={{color: !isLogin ? "green" : "#333"}}>{isLogin ? "Login" : "Sign Up.."}</h1>
-                    <input type="text" placeholder="Username"/>
-                    <input type="email" placeholder="@example.com" required/>
-                    <input type="password" placeholder="Password" required/>
-                    {!isLogin ? <input type="password" placeholder="Confirm Password" required/>
+                    <input type="text" placeholder="Username"
+                    onChange={(e)=>setUsername(e.target.value)}
+                    required/>
+                    <input type="email" placeholder="@example.com"
+                    onChange={(e)=> setEmail(e.target.value)}
+                    required/>
+                    <input type="password" placeholder="Password" 
+                    onChange={(e)=>setPassword(e.target.value)}
+                    required/>
+                    {!isLogin ? <input type="password" placeholder="Confirm Password"
+                    onChange={(e) => setConfirmPass(e.target.value)}
+                    required/>
                     : null}
-                    <input className="formSubmit" type="submit"/>
+                    <input className="formSubmit" type="submit" onClick={(e) =>handleSubmit(e, isLogin? "login" : "signup")}/>
+                    <p style={{color: "red"}}>{error}</p>
                 </form>
                 <div className="submitBtn">
                         <button onClick={() => viewLogin(false)}>Sign up</button>
