@@ -4,10 +4,11 @@ const pg = require("pg");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
-
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT ?? 4400;
+app.use(cors())
 app.use(express.json())
 
 
@@ -23,7 +24,7 @@ db.connect();
 
 
 app.get("/signup", async (req, res) => {
-    const userEmail = "wike@gmail.com"
+    const userEmail = req.params
     
     try {
         const response = await db.query("SELECT * FROM gemini_ai WHERE email = $1", [userEmail]);
