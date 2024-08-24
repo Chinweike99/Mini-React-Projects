@@ -22,16 +22,16 @@ const Auth = () => {
     }
 
     const handleSubmit = async (e, endpoint) => {
-        const {username, email, password} = req.body
+        // const {username, email, password} = req.body
         e.preventDefault()
         if(!isLogin && password !== confirmPass){
             setError("Passwords do not match")
             return
         }
-        const response = await fetch(`${process.env.LOCAL_PORT}/${endpoint}`,{
+        const response = await fetch(`http://localhost:4400/${endpoint}`,{
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: req.body
+            body: JSON.stringify({username, email, password})
         });
         const data = await response.json();
         if (data.detail){
@@ -39,24 +39,8 @@ const Auth = () => {
         }else{
             setCookie("Email", data.email)
             setCookie("AuthToken", data.token)
-
+            setCookie("Username", data.username);
             window.location.reload();
-        }
-    }
-
-    const createAccount = async()=> {
-            const body = {username, email, password}
-
-        try {
-            const response = await fetch(`${process.env.LOCAL_PORT}`,{
-                method: "POST",
-                headers: {"Content-Type": "Application/json"},
-                body: JSON.stringify(body)
-            });
-            const data = await response();
-            console.log(data);
-        } catch (error) {
-            console.error(error.message)
         }
     }
 
@@ -80,7 +64,7 @@ const Auth = () => {
                     onChange={(e) => setConfirmPass(e.target.value)}
                     required/>
                     : null}
-                    <input className="formSubmit" type="submit" onClick={(e) =>handleSubmit(e, isLogin? "login" : "signup")}/>
+                    <input className="formSubmit" type="submit" onClick={(e) =>handleSubmit(e, isLogin ? "login" : "signup")}/>
                     <p style={{color: "red"}}>{error}</p>
                 </form>
                 <div className="submitBtn">

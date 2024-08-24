@@ -2,13 +2,22 @@ import React, { useContext, useState } from "react";
 import './Main.css';
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/context";
+import { useCookies } from "react-cookie";
 
 const MainSection = () => {
 
     const {prevPrompt, setPrevPrompt, onSent, setRecentPrompt, recentPrompt, showResult, loading, resultData, input, setInput, saveRecent} = useContext(Context)
+    const [cookies, setCookie, removeCookie] = useCookies(null);
+    const User = cookies.Username;
 
     const [hideLog, setHideLog] = useState(false);
 
+    const singOut = () => {
+        removeCookie("Email");
+        removeCookie("AuthToken");
+        removeCookie("Username")
+        window.location.reload();
+      }
 
     return (
         <div className="main">
@@ -19,7 +28,7 @@ const MainSection = () => {
                 <div className="logOut">
                     <p>owner of Account</p>
                     <p>About</p>
-                    <button>Log Out</button>
+                    <button onClick={singOut}>Log Out</button>
                 </div>
                 : null }
             </div>
@@ -28,7 +37,7 @@ const MainSection = () => {
                 {!showResult ? 
                 <>
                     <div className="salute">
-                    <p><span>Hello, Dev .</span></p>
+                    <p><span>Hello, {User}.</span></p>
                     <p>How can i assist you today ?.</p>
                 </div>
                 <div className="cards">
@@ -69,28 +78,6 @@ const MainSection = () => {
                         }
                         
                     </div>
-                            {/* </>
-                        ) 
-                    })} */}
-
-                    {/* <div className="resultTitle">
-                        <img src={assets.images} alt="" />
-                        <p>{recentPrompt}</p>
-                    </div> */}
-                    
-                    {/* <div className="resultData">
-                        <img src={assets.geminiIcon} alt="" /> */}
-                        {/* ADDING LOADING STATE IF THE RESULT IS NOT YET AVAILABLE */}
-                        {/* {loading? 
-                            <div className="loader">
-                                <hr />
-                                <hr />
-                                <hr />
-                            </div>
-                        : <p dangerouslySetInnerHTML={{__html:resultData}}></p> 
-                        }
-                        
-                    </div> */}
                 </div>
                     
                 }

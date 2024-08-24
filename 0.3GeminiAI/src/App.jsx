@@ -8,14 +8,14 @@ function App() {
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const [access, setAccess] = useState(null);
 
-  const userEmail = "wike@gmail.com"
-  const authToken = cookies.authToken
+  const userEmail = cookies.Email;
+  const authToken = cookies.AuthToken;
 
-  const [hideAuth, setHideAuth ] = useState(true)
+  // const [hideAuth, setHideAuth ] = useState(true)
   
   const getData = async() => {
     try {
-      const response = await fetch(`http://localhost:4400/signup/${userEmail}`)
+      const response = await fetch(`${process.env.LOCAL_PORT}/signup/${userEmail}`)
       const jsonReply = await response.json();
       console.log(jsonReply);
       setAccess(jsonReply)
@@ -26,7 +26,9 @@ function App() {
 
 
   useEffect(() => {
-    getData();
+    if(authToken){
+      getData();
+    }
   }, [])
   console.log(access);
 
@@ -34,8 +36,8 @@ function App() {
 
   return (
     <>
-      {hideAuth && <Auth />}
-      {!hideAuth && 
+      {!authToken && <Auth />}
+      {authToken && 
       <>
       <SideBar />
       <MainSection />
