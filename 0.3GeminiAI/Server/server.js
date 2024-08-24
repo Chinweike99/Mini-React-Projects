@@ -23,8 +23,9 @@ const db = new pg.Client({
 db.connect();
 
 
-app.get("/signup", async (req, res) => {
-    const userEmail = req.params
+app.get("/signup/:userEmail", async (req, res) => {
+    
+    const { userEmail } = req.params
     
     try {
         const response = await db.query("SELECT * FROM gemini_ai WHERE email = $1", [userEmail]);
