@@ -5,9 +5,10 @@ import menuBar from './menuBar.svg'
 import microphoneSolid from './microphoneSolid.svg'
 import tvSolid from './tvSolid.svg'
 import videoSolid from './videoSolid.svg'
-import youTube from './youTube.jpeg'
+import youTube from './youTube.png'
 import uploadSolid from './uploadSolid.svg'
-import userRegular from './userRegular'
+import userRegular from './userRegular.svg'
+import puzzleSolid from './puzzleSolid.svg'
 
 const assets = {
     bellSolid,
@@ -19,7 +20,8 @@ const assets = {
     videoSolid,
     youTube,
     uploadSolid,
-    userRegular
+    userRegular,
+    puzzleSolid
 }
 
 export default assets;
