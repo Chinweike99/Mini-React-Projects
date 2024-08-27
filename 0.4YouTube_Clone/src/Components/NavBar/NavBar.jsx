@@ -12,8 +12,8 @@ const NavBar = () => {
 
         <div className="navMiddle flexDiv">
           <div className="searchBox flexDiv">
-          <input type="text" placeholder='Search'/>
-          <img src={assets.glassSolid} alt="" />
+            <input type="text" placeholder='Search'/>
+            <img src={assets.glassSolid} alt="" />
           </div>
             
         </div>
