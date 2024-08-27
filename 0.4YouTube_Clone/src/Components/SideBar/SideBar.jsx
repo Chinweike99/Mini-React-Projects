@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './SideBar.css'
 import assets from '../../assets/assets';
 
-const SideBar = () => {
+const SideBar = ({sidebar}) => {
   return (
-    <div className='sideBar'>
+    <div className={`sideBar ${sidebar?"" : "smallSideBar"}`}>
       <div className="shortLink">
         <div className="sideLinks">
           <img src={assets.houseSolid} alt="" /><p>Home</p>
@@ -36,7 +36,7 @@ const SideBar = () => {
         <hr />
       </div>
 
-      <div className='subScribed'>
+      <div className='subScribedList'>
         <h3>Subscribed</h3>
         <div className="sideLink">
           <img src={assets.image2} alt="" /><p>PewDiePie</p>

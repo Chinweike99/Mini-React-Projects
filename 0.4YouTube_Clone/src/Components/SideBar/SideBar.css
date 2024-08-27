@@ -1,5 +1,54 @@
-.subScribed .sideLink img{
-    width: 80px;
-    height: 80px;
+.sideBar{
+    background: #fff;
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding-left: 2%;
+    padding-top: 110px;
+}
+.shortLink img{
+    width: 20px;
+    margin-right: 13px;
+}
+.sideLinks, .sideLink{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.sideBar hr{
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    width: 85%;
+}
+
+
+.subScribedList h3{
+    font-size: 13px;
+    margin: 20px 0;
+    color: #5a5a5a;
+}
+.subScribedList .sideLink img{
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    margin-right: 13px;
+}
+
+.smallSideBar{
+    width: 5%;
+}
+.smallSideBar p{
+    display: none;
+}
+.smallSideBar h3{
+    display: none;
+}
+.smallSideBar hr{
+    width: 50%;
+    margin-bottom: 25px;
 }

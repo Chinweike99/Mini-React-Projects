@@ -2,11 +2,11 @@ import { useState } from 'react'
 import './NavBar.css'
 import assets from '../../assets/assets';
 
-const NavBar = () => {
+const NavBar = ({setSidebar}) => {
   return (
       <nav className='flexDiv'>
         <div className='navLeft flexDiv'>
-            <img className='menuIcon' src={assets.menuBar} alt="" />
+            <img className='menuIcon' onClick={()=>setSidebar(prev=>prev===false?true:false)} src={assets.menuBar} alt="" />
             <img className='logo' src={assets.youTube} alt="" />
         </div>
 
@@ -22,7 +22,7 @@ const NavBar = () => {
           <img src={assets.uploadSolid} alt="" />
           <img src={assets.puzzleSolid} alt="" />
           <img src={assets.bellSolid} alt="" />
-          <img src={assets.userRegular} className='userIcon' alt="" />
+          <img src={assets.amandla} className='userIcon' alt="" />
         </div>
       </nav>
   )
