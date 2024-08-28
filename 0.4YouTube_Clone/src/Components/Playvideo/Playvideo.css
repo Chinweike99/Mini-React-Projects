@@ -6,8 +6,8 @@
     justify-content: center;
     margin: 10px auto;
     margin-bottom: 40px; */
-    margin: 10px 30px;
-    margin-bottom: 50px;
+    /* margin: 10px 30px;
+    margin-bottom: 50px; */
 }
 .playVideo video{
     width: 100%;
@@ -110,4 +110,20 @@
     color: #5a5a5a;
     font-weight: 500;
     margin-left: 10px;
+}
+.comment .commentAction{
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 14px;
+}
+.commentAction img{
+    border-radius: 0;
+    width: 22px;
+    margin-right: 5px;
+}
+.commentAction span{
+    margin-right: 20px;
+    font-size: 14px;
+    color: #5a5a5a;
 }
