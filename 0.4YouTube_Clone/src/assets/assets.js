@@ -39,10 +39,23 @@ import shareSolid from './shareSolid.svg'
 import thumbsDown from './thumbsDown.svg'
 import thumbsUp from './thumbsUp.svg'
 import video1 from './video1.mp4'
-
+import Ai from './Ai.jpg'
+import Ai2 from './Ai2.jpg'
+import comedy from './comedy.jpg'
+import dataAnalysis from './dataAnalysis.jpg'
+import dataAnalysis2 from './dataAnalysis2.jpg'
+import health from './health.jpg'
+import health2 from './health2.jpg'
 
 
 const assets = {
+    Ai,
+    Ai2,
+    comedy,
+    dataAnalysis,
+    dataAnalysis2,
+    health,
+    health2,
     downloadSolid,
     heartSolid,
     shareSolid,
