@@ -19,6 +19,13 @@
     flex-wrap: wrap;
     cursor: pointer;
 }
+.sideLinks p:hover{
+    background: #a1b2be;
+    padding: 5px 15px;
+    font-size: 15px;
+    border-radius: 25px;
+    transition: all 0.3s linear;
+}
 .sideBar hr{
     border: 0;
     height: 1px;
@@ -39,6 +46,13 @@
     margin-right: 13px;
 }
 
+.subScribedList .sideLink p:hover{
+    background: #a1b2be;
+    padding: 5px 15px;
+    font-size: 15px;
+    border-radius: 25px;
+    transition: all 0.3s linear;
+}
 .smallSideBar{
     width: 5%;
 }
