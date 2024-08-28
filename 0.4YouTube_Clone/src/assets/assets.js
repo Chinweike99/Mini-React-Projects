@@ -33,9 +33,22 @@ import img6 from './img6.jpg'
 import img7 from './img7.jpg'
 import img8 from './img8.jpg'
 import img9 from './img9.jpg'
+import downloadSolid from './downloadSolid.svg'
+import heartSolid from './heartSolid.svg'
+import shareSolid from './shareSolid.svg'
+import thumbsDown from './thumbsDown.svg'
+import thumbsUp from './thumbsUp.svg'
+import video1 from './video1.mp4'
+
 
 
 const assets = {
+    downloadSolid,
+    heartSolid,
+    shareSolid,
+    thumbsDown,
+    thumbsUp,
+    video1,
     img1,
     img2,
     img3,
