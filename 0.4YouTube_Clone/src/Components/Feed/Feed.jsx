@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './Feed.css'
 import assets from '../../assets/assets';
 import { Link } from 'react-router-dom';
-import { valueConverter, API_KEY } from '../../data';
+import { valueConverter } from '../../data';
 import moment from 'moment'
 // import { response } from 'express';
 
 const Feed = ({category}) => {
 
+    const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
     const [data, setData] = useState([]);
 
     const fetchData = async () => {
@@ -24,7 +25,7 @@ const Feed = ({category}) => {
         <div className="feed">
             {data.map((item, index)=>{
                 return (
-                    <Link to={`video/${item.snippet.categoryId}/${item.id}`} className='card'>
+                    <Link to={`video/${item.snippet.categoryId}/${item.id}`} className='card' key={index}>
                         <img src={`${item.snippet.thumbnails.medium.url}`} alt="" />
                         <h2>{`${item.snippet.title}`}</h2>
                         <h3>{`${item.snippet.channelTitle}`}</h3>
@@ -130,7 +131,7 @@ const Feed = ({category}) => {
             </div> */}
 
         </div>
-    )
+    ) 
 }
 
 export default Feed;
