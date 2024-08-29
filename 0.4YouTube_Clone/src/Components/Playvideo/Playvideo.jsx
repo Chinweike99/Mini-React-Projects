@@ -2,10 +2,11 @@ import React from "react"
 import './Playvideo.css'
 import assets from "../../assets/assets";
 
-const PlayVideo = () =>{
+const PlayVideo = ({videoId}) =>{
     return (
         <div className="playVideo">
-            <video src={assets.video1} controls autoPlay muted></video>
+            {/* <video src={assets.video1} controls autoPlay muted></video> */}
+            <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <h3>Learning web development</h3>
             <div className="playVideoInfo">
                 <p>2918 views &bull; 3 days ago</p>
