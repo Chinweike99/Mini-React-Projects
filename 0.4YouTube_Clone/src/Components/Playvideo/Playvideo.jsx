@@ -8,7 +8,7 @@ const PlayVideo = ({videoId}) =>{
 
     const [apiData, setApiData] = useState(null);
     const [channelData, setChannelData] = useState(null)
-    const [channelComment, setChannelComment] = ([]); 
+    const [channelComment, setChannelComment] = useState([]); 
 
     const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
     // FETCH VIDEO DATA
@@ -21,15 +21,11 @@ const PlayVideo = ({videoId}) =>{
     // FETCH CHANNEL DATA
     const fetchChannelData = async() => {
         const channelDetails =`https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${apiData.snippet.channelId}&key=${API_KEY}`
-
         await fetch(channelDetails).then(res=>res.json()).then(data=>setChannelData(data.items[0]))
-    }
 
-    // FECTCH REAL COMMENTS
-    const fetchCommentData = async()=>{
-        const commentDetails = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${videoId}&key=${API_KEY}`;
-
-        await fetch(commentDetails).then(res=>res.json()).then(data=>setChannelComment(data.items))
+        // FETCHING REAL TIME COMMENT
+        const commenturl = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=50&videoId=${videoId}&key=${API_KEY}`;
+        await fetch(commenturl).then(res=>res.json()).then(data=>setChannelComment(data.items))
     }
 
 
@@ -71,7 +67,24 @@ const PlayVideo = ({videoId}) =>{
                 <p>Subscribe to get notified on uplaod of latest videos.</p> */}
                 <hr />
                 <h4>{valueConverter(apiData?apiData.statistics.commentCount: "0")} Comments</h4>
-                <div className="comment">
+                {channelComment.map((item, index) => {
+                    return (
+                        <div key={index} className="comment">
+                            <img src={item.snippet.topLevelComment.snippet.authorProfileImageUrl} alt="" />
+                            <div>
+                                <h3>{item.snippet.topLevelComment.snippet.authorDisplayName} <span>{moment(item.snippet.topLevelComment.snippet.publishedAt).fromNow()}</span></h3>
+                                <p>{item.snippet.topLevelComment.snippet.textOriginal}</p>
+                                <div className="commentAction">
+                                    <img src={assets.thumbsUp} alt="" />
+                                    <span>{valueConverter(item.snippet.topLevelComment.snippet.likeCount)}</span>
+                                    <img src={assets.thumbsDown} alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })}
+                
+                {/* <div className="comment">
                     <img src={assets.userRegular} alt="" />
                     <div>
                         <h3>James Abrigodo <span>4 days ago</span></h3>
@@ -106,19 +119,7 @@ const PlayVideo = ({videoId}) =>{
                             <img src={assets.thumbsDown} alt="" />
                         </div>
                     </div>
-                </div>
-                <div className="comment">
-                    <img src={assets.userRegular} alt="" />
-                    <div>
-                        <h3>James Abrigodo <span>4 days ago</span></h3>
-                        <p>These technologies cover both the backend (Node.js, Express.js, PostgreSQL) and the frontend (React.js, JavaScript).</p>
-                        <div className="commentAction">
-                            <img src={assets.thumbsUp} alt="" />
-                            <span>110</span>
-                            <img src={assets.thumbsDown} alt="" />
-                        </div>
-                    </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
