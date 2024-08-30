@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './Recommended.css'
 import assets from "../../assets/assets";
+import { valueConverter } from "../../data";
+import { Link } from "react-router-dom";
 
 const Recommended = ({categoryId}) => {
 
@@ -8,7 +10,7 @@ const Recommended = ({categoryId}) => {
     const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
     const fetchRecommended = async()=> {
-        const getVideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&videoCategoryId=${categoryId}&key=${API_KEY}`;
+        const getVideos = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=30&regionCode=US&videoCategoryId=${categoryId}&key=${API_KEY}`;
         await fetch(getVideos).then(res=>res.json()).then(data=>setRecommended(data.items))
     }
 
@@ -21,14 +23,14 @@ const Recommended = ({categoryId}) => {
         <div className="recommended">
             {recommendedVideo.map((item, index) => {
                 return(
-                    <div key={index} className="sideVideos">
+                    <Link to={`/video/${item.snippet.categoryId}/${item.id}`} key={index} className="sideVideos">
                         <img src={item.snippet.thumbnails.medium.url} alt="" />
                         <div className="videoInfo">
                             <h4>{item.snippet.title}</h4>
-                            <p>AiTutor</p>
-                            <p>400k views</p>
+                            <p>{item.snippet.channelTitle}</p>
+                            <p>{valueConverter(item.statistics.viewCount)}views</p>
                         </div>
-                    </div>
+                    </Link >
                 )
             })}
             
