@@ -1,14 +1,12 @@
-import React from "react";
-// import ReactDOM from 'react-dom'
+import './App.css';
+import { Loggin } from './Components/Login/Login';
 
-
-const App = () =>{
-    return (
-        <div>
-
-        </div>
-    )
+function App() {
+  return (
+    <div className="App">
+      <Loggin />
+    </div>
+  );
 }
-
 
 export default App;
