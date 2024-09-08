@@ -11,9 +11,12 @@ import thumbsUp from './thumbsUp.svg'
 import envelope from './envelope.svg'
 import moonRegular from './moonRegular.svg'
 import moonSolid from './moonSolid.svg'
-
+import image1 from './image1.jpeg'
+import image4 from './image4.jpg'
 
 const assets = {
+    image1,
+    image4,
     envelope,
     moonRegular,
     moonSolid,
