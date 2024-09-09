@@ -27,6 +27,7 @@
 
 .rightBar .mainContainer{
     margin-bottom: 90px;
+    margin-top: 8px;
 }
 
 .rightMain h4{
@@ -38,7 +39,7 @@
     background: #fff;
     padding: 10px 15px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 .rightBar .topDiv .content img{
     width: 35px;

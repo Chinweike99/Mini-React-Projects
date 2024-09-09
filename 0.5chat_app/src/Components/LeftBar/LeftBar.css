@@ -18,6 +18,10 @@
     margin-bottom: 120px;
 }
 
+hr{
+    margin-top: 25px;
+}
+
 .topSec{
     display: flex;
     align-items: center;

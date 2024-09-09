@@ -17,7 +17,7 @@ export const LeftBar = ({backColor}) => {
               )   
             })}
         </div>
-        
+        <hr />
         <div className='midSec'>
           <h4>Shortcuts</h4>
             {midSec.map((item, index) => {
@@ -29,7 +29,7 @@ export const LeftBar = ({backColor}) => {
               )   
             })}
         </div>
-
+            <hr />
         <div className='bottomSec'>
           <h4>Others</h4>
             {bottomSec.map((item, index) => {
