@@ -6,12 +6,13 @@ import { Loggin } from './Pages/Login/Login';
 import { Home } from './Pages/Home/Home';
 import {Profile} from './Pages/Profile/Profile'
 import { createBrowserRouter, RouterProvider, Outlet, Navigate} from 'react-router-dom'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './style.scss';
+import { AuthContext } from './Context/authContext';
 
 function App() {
 
-  const currentUser = (true);
+  const {currentUser} = useContext(AuthContext);
   const [backColor, setBackColor] = useState(true);
 
 
