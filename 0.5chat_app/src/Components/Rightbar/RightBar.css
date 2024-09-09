@@ -65,8 +65,7 @@
     border: none;
     font-size: 15px;
     border-radius: 3px;
-    background: rgb(141, 112, 186);
-    color: #fff;
+    cursor: pointer;
 }
 
 /* BOTTOM STYLE */
@@ -78,4 +77,55 @@
     position: absolute;
     top: 5px;
     left: 25px;
+}
+
+.rightBar .bottomDiv .content img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.rightBar .bottomDiv .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    gap: 10px;
+    position: relative;
+}
+.rightBar .bottomDiv .content div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.rightBar .bottomDiv .content button{
+    width: 4rem;
+    padding: 4px;
+    border: none;
+    font-size: 15px;
+    border-radius: 3px;
+    background: rgb(141, 112, 186);
+    color: #fff;
+}
+.rightBar .bottomDiv{
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 900px){
+    
+    /* .content button{
+        display: none;
+    } */
+    .topDiv .rightMain .content .time {
+        display: none;
+    }
+}
+@media (max-width: 1200px){
+    .topDiv .rightMain .content{
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -37,7 +37,7 @@ export const RightBar = ({backColor}) => {
                   <img src={item.src} alt="" />
                   <label>{item.label}</label>
                 </div>
-                <div>
+                <div className='time'>
                   <p>{item.time}</p>
                 </div>
               </div>
@@ -47,7 +47,7 @@ export const RightBar = ({backColor}) => {
         </div>
 
           {/* BOTTOM */}
-      <div className='topDiv'>
+      <div className='bottomDiv'>
         <div className='rightMain'>
           <h4>Online friends</h4>
           {rightBottom.map((item, index) => {
