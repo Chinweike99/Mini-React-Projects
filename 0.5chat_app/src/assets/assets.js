@@ -19,10 +19,13 @@ import messages from './messages.jpeg'
 import videos from './videos.png'
 import watch from './watch.jpeg'
 import tutorials from './tutorials.png'
+import image6 from './image6.jpg'
+import images1 from './images1.jpg'
+import img1 from './img1.jpg'
 
 const assets = {
     courses,
-    events,
+    events,image6, images1, img1,
     friends, fund, Gallery, gaming, group, market, memories,messages,videos, watch,tutorials,
     image1,
     image4,
