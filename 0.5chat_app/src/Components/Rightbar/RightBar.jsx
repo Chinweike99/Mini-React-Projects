@@ -3,6 +3,6 @@ import './RightBar.css'
 
 export const RightBar = () => {
   return (
-    <div>RightBar</div>
+    <div className='rightBa'>RightBar</div>
   )
 }

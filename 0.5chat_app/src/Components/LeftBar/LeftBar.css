@@ -1,8 +1,23 @@
+.leftMainBar{
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    background: #ece6f1 ;
+    width: 11%;
+    padding: 10px 20px;
+    height: 100%;
+    position: fixed;
+}
+
+.leftMainBar .content{
+    /* height: 90%; */
+    margin-bottom: 120px;
+}
+
 .topSec{
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 7px;
+    margin-bottom: 10px;
 }
 .topSec img{
     width: 35px;
@@ -13,10 +28,17 @@
 .topSec p{
     font-weight: 500;
     cursor: pointer;
+    font-size: 18px;
 }
 
 /* Mid Section */
 .midSec h4{
-    margin: 15px auto;
+    margin: 10px auto;
+    margin-top: 30px;
+}
+
+/* BOTTOM SECTION */
+.bottomSec h4{
+    margin: 10px auto;
     margin-top: 30px;
 }

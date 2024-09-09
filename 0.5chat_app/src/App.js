@@ -5,24 +5,24 @@ import { RightBar } from './Components/Rightbar/RightBar';
 import { Loggin } from './Pages/Login/Login';
 import { Home } from './Pages/Home/Home';
 import {Profile} from './Pages/Profile/Profile'
-import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Outlet, Navigate} from 'react-router-dom'
 import { useState } from 'react';
 
 
 function App() {
 
   const currentUser = (true);
-  const [backColor, setBackColor] = useState(false);
+  const [backColor, setBackColor] = useState(true);
 
 
   const Layout = () => {
     return (
       <div className={backColor? 'layout': 'layDark'}>
         <NavBar className="navBar" backColor={backColor} setBackColor={setBackColor}/>
-        <div style={{ display: "flex", marginTop: "70px", padding: "15px", height: "100vh"}}>
-          <LeftBar />
+        <div style={{ display: "flex", marginTop: "70px", padding: "1px", height: "100vh"}}>
+          <LeftBar backColor={backColor} setBackColor={setBackColor}/>
           <Outlet />
-          <RightBar />
+          <RightBar style={{ display: "flex", padding: "1px", height: "100vh"}}/>
         </div>
       </div>
     );

@@ -1,12 +1,12 @@
 import React from 'react'
 import './LeftBar.css'
-import assets from '../../assets/assets';
 import { topSec, midSec,  bottomSec } from '../../images';
 
 
-export const LeftBar = () => {
+export const LeftBar = ({backColor, setBackColor}) => {
   return (
-    <div>
+    <div className='leftMainBar' style={{color: backColor? "black" : "#fff", background: backColor? "#ece6f1": "rgb(141, 112, 186)"}}>
+      <div className='content'>
         <div>
             {topSec.map((item, index) => {
               return (
@@ -19,7 +19,7 @@ export const LeftBar = () => {
         </div>
         
         <div className='midSec'>
-          <h4>Events upcoming</h4>
+          <h4>Shortcuts</h4>
             {midSec.map((item, index) => {
               return (
                   <div className="topSec" key={index}>
@@ -30,7 +30,7 @@ export const LeftBar = () => {
             })}
         </div>
 
-        <div className='midSec'>
+        <div className='bottomSec'>
           <h4>Others</h4>
             {bottomSec.map((item, index) => {
               return (
@@ -40,6 +40,10 @@ export const LeftBar = () => {
                   </div>
               )   
             })}
+        </div>
+        <div>
+          <p>Hello World</p>
+        </div>
         </div>
     </div>
   )
