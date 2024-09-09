@@ -7,7 +7,7 @@ import { Home } from './Pages/Home/Home';
 import {Profile} from './Pages/Profile/Profile'
 import { createBrowserRouter, RouterProvider, Outlet, Navigate} from 'react-router-dom'
 import { useState } from 'react';
-
+import './style.scss';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
 
   const Layout = () => {
     return (
-      <div className={backColor? 'layout': 'layDark'}>
+      <div id='theme-dark' className={backColor? 'layout': 'layDark'}>
         <NavBar className="navBar" backColor={backColor} setBackColor={setBackColor}/>
         <div style={{ display: "flex", marginTop: "70px", padding: "1px"}}>
           <LeftBar backColor={backColor} setBackColor={setBackColor}/>

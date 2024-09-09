@@ -8,6 +8,7 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import Person3OutlinedIcon from '@mui/icons-material/Person3Outlined';
 import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 
 
 export const NavBar = ({backColor, setBackColor}) => {
@@ -24,7 +25,9 @@ export const NavBar = ({backColor, setBackColor}) => {
                     <span style={{color: backColor? "black" : "#fff"}}>CMedia</span>
                 </Link>
                 <HomeOutlinedIcon  />
+                {backColor? 
                 <NightlightOutlinedIcon onClick={handleColor}/>
+                : <LightModeOutlinedIcon onClick={handleColor}/>}
                 <WidgetsOutlinedIcon />
             </div>
             <div className="search">

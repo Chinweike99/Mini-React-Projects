@@ -1,5 +1,15 @@
 .home{
-    margin-left: 14%;
+    margin-left: 15%;
     width: 70%;
     margin-bottom: 20px;
+}
+@media (max-width: 900px){
+    // .home{
+    //     margin-left: 16%;
+    // }
+}
+@media (max-width: 1200px){
+    .home{
+        margin-left: 18%;
+    }
 }
