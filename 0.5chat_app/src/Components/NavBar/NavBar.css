@@ -57,3 +57,16 @@ nav{
     font-weight: 600;
     cursor: pointer;
 }
+
+@media (max-width: 900px){
+    .navBar{
+        display: flex;
+        /* flex-direction: row-reverse; */
+    }
+    .navBar .left{
+        gap: 5px;
+    }
+    .navBar .right{
+        gap: 5px;
+    }
+}
