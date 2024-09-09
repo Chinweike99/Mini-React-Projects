@@ -22,3 +22,11 @@ export const bottomSec = [
     {src: `${assets.tutorials}`, label: "Tutorials"},  
     {src: `${assets.Gallery}`, label: "Courses"},   
 ];
+
+// RIGHT BAR
+
+export const rightTop = [
+    {src: `${assets.image1}`, label: "Christabel Abel"},  
+    {src: `${assets.image1}`, label: "Christabel Abel"},  
+    {src: `${assets.image1}`, label: "Anabel Daniel"},   
+];

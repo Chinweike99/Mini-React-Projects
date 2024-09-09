@@ -3,7 +3,7 @@ import './LeftBar.css'
 import { topSec, midSec,  bottomSec } from '../../images';
 
 
-export const LeftBar = ({backColor, setBackColor}) => {
+export const LeftBar = ({backColor}) => {
   return (
     <div className='leftMainBar' style={{color: backColor? "black" : "#fff", background: backColor? "#ece6f1": "rgb(141, 112, 186)"}}>
       <div className='content'>

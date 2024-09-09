@@ -13,8 +13,8 @@
     overflow-y: auto; 
     overflow-x: hidden; 
     background: #ece6f1 ;
-    width: 11%;
-    padding: 10px 20px;
+    width: 20%;
+    padding: 5px 10px;
     height: 100%;
     position: fixed;
     right: 0;
@@ -22,5 +22,36 @@
     &::-webkit-scrollbar{
         display: none;
     }
-
+}
+.rightBar .topDiv{
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.rightBar .topDiv .content img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.rightBar .topDiv .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    gap: 10px;
+}
+.rightBar .topDiv .content div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.rightBar .topDiv .content button{
+    width: 4rem;
+    padding: 4px;
+    border: none;
+    font-size: 15px;
+    border-radius: 3px;
+    background: rgb(141, 112, 186);
+    color: #fff;
 }

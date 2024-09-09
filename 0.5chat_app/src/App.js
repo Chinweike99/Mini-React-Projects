@@ -22,7 +22,7 @@ function App() {
         <div style={{ display: "flex", marginTop: "70px", padding: "1px"}}>
           <LeftBar backColor={backColor} setBackColor={setBackColor}/>
           <Outlet />
-          <RightBar style={{ display: "flex", padding: "1px", height: "100vh"}}/>
+          <RightBar backColor={backColor} setBackColor={setBackColor}/>
         </div>
       </div>
     );
