@@ -1,3 +1,26 @@
+/* .rightBar{
+    flex: 3;
+    position: sticky;
+    background: gray;
+    height: calc(100vh-70px);
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+} */
 .rightBar{
-    margin-left: 12%;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    background: #ece6f1 ;
+    width: 11%;
+    padding: 10px 20px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
 }

@@ -23,7 +23,7 @@ export const NavBar = ({backColor, setBackColor}) => {
                 <Link to="/" style={{textDecoration: "none", color: "black"}}>
                     <span style={{color: backColor? "black" : "#fff"}}>CMedia</span>
                 </Link>
-                <HomeOutlinedIcon className='home' />
+                <HomeOutlinedIcon  />
                 <NightlightOutlinedIcon onClick={handleColor}/>
                 <WidgetsOutlinedIcon />
             </div>
