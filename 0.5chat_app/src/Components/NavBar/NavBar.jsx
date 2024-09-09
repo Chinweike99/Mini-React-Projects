@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './NavBar.css'
 import {Link} from 'react-router-dom'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -11,29 +11,36 @@ import Person3OutlinedIcon from '@mui/icons-material/Person3Outlined';
 import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
 
 
-export const NavBar = () => {
+export const NavBar = ({backColor, setBackColor}) => {
+
+   const handleColor = () => {
+    setBackColor(!backColor);
+   }
+
   return (
-    <div className='navBar'>
-        <div className="left">
-            <Link to="/">
-            <span>CMedia</span>
-            </Link>
-            <HomeOutlinedIcon />
-            <NightlightOutlinedIcon />
-            <WidgetsOutlinedIcon />
+    <nav>
+        <div className='navBar' style={{background: backColor? "rgb(141, 112, 186)" : "rgb(141, 112, 186)"}}>
+            <div className="left" style={{color: backColor? "black" : "#fff"}}>
+                <Link to="/" style={{textDecoration: "none", color: "black"}}>
+                    <span style={{color: backColor? "black" : "#fff"}}>CMedia</span>
+                </Link>
+                <HomeOutlinedIcon className='home' />
+                <NightlightOutlinedIcon onClick={handleColor}/>
+                <WidgetsOutlinedIcon />
+            </div>
             <div className="search">
                 <input type="text" placeholder='Search'/>
                 <SearchOutlinedIcon />
             </div>
-        </div>
 
-        <div className="right">
-            <FileUploadOutlinedIcon />
-            <MailOutlinedIcon />
-            <NotificationsActiveOutlinedIcon />
-            <Person3OutlinedIcon />
-            <span>Daniel Doe</span>
-        </div>
+            <div className="right" style={{color: backColor? "black" : "#fff"}}>
+                <FileUploadOutlinedIcon />
+                <MailOutlinedIcon />
+                <NotificationsActiveOutlinedIcon />
+                <Person3OutlinedIcon />
+                <span>Daniel Doe</span>
+            </div>
     </div>
+    </nav>
   )
 }

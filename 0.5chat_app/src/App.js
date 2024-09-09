@@ -6,17 +6,20 @@ import { Loggin } from './Pages/Login/Login';
 import { Home } from './Pages/Home/Home';
 import {Profile} from './Pages/Profile/Profile'
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from 'react-router-dom'
+import { useState } from 'react';
 
 
 function App() {
 
   const currentUser = (true);
+  const [backColor, setBackColor] = useState(false);
+
 
   const Layout = () => {
     return (
-      <div>
-        <NavBar />
-        <div style={{ display: "flex"}}>
+      <div className={backColor? 'layout': 'layDark'}>
+        <NavBar className="navBar" backColor={backColor} setBackColor={setBackColor}/>
+        <div style={{ display: "flex", marginTop: "70px", padding: "15px", height: "100vh"}}>
           <LeftBar />
           <Outlet />
           <RightBar />

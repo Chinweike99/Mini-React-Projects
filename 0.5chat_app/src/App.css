@@ -2,3 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.layout{
+  height: 100vh;
+}
+.layDark{
+  background-color: #141414;
+}

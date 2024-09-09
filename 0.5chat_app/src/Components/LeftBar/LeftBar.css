@@ -1,0 +1,22 @@
+.topSec{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 7px;
+}
+.topSec img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.topSec p{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Mid Section */
+.midSec h4{
+    margin: 15px auto;
+    margin-top: 30px;
+}
