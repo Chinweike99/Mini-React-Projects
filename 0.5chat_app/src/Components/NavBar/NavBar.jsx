@@ -9,9 +9,13 @@ import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import Person3OutlinedIcon from '@mui/icons-material/Person3Outlined';
 import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/authContext';
+import assets from '../../assets/assets';
 
 
 export const NavBar = ({backColor, setBackColor}) => {
+    const {currentUser} = useContext(AuthContext);
 
    const handleColor = () => {
     setBackColor(!backColor);
@@ -39,8 +43,8 @@ export const NavBar = ({backColor, setBackColor}) => {
                 <FileUploadOutlinedIcon />
                 <MailOutlinedIcon />
                 <NotificationsActiveOutlinedIcon />
-                <Person3OutlinedIcon />
-                <span>Daniel Doe</span>
+                <img src={currentUser.profilePic} alt="" />
+                <span>{currentUser.name}</span>
             </div>
     </div>
     </nav>

@@ -1,9 +1,15 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './Login.scss'
+import { AuthContext } from '../../Context/authContext';
 
 export const Loggin = () => {
 
+  const {login} = useContext(AuthContext);
   const [showLogin, setShowLogin] = useState(true);
+
+  const handleLogin = () => {
+    login();
+  }
 
   const hanldeShowLogin = () =>{
     setShowLogin(!showLogin)
@@ -31,7 +37,7 @@ export const Loggin = () => {
                     {!showLogin?  <input type="email" placeholder="example@gmail.com"/> : null}
                     <input type="password" placeholder='Password'/>
                     {!showLogin? <input type="password" placeholder='Confirm password'/> : null}
-                    <button>{showLogin? "Login" : "Register"}</button>
+                    <button onClick={handleLogin}>{showLogin? "Login" : "Register"}</button>
                 </form>
           </div>
       </div>

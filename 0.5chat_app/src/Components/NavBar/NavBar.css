@@ -57,6 +57,11 @@ nav{
     font-weight: 600;
     cursor: pointer;
 }
+.navBar .right img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
 
 @media (max-width: 900px){
     .navBar{
