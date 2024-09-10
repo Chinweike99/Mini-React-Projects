@@ -1,7 +1,6 @@
 import assets from "./assets/assets"
 
 export const topSec = [
-    {src: `${assets.image4}`, label: "User"},
     {src: `${assets.friends}`, label: "friends"},
     {src: `${assets.group}`, label: "Groups"},
     {src: `${assets.market}`, label: "Marketplace"},
