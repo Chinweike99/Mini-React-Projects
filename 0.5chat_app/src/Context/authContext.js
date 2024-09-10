@@ -9,7 +9,7 @@ export const AuthContextProvider = ({children}) => {
     );
 
     const login = () => {
-        const userData = { id: 1, name: "Christabel Abel", profilePic: `${assets.image6}` };
+        const userData = { id: 1, name: "Christabel Abel", profilePic: `${assets.images1}` };
         setCurrentUser(userData);
         localStorage.setItem("user", JSON.stringify(userData));
     };
