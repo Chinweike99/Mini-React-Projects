@@ -2,11 +2,11 @@ import { Post } from '../../Components/Posts/Post'
 import { Stories } from '../../Components/Stories/Stories'
 import './Home.scss'
 
-export const Home = () => {
+export const Home = ({backColor}) => {
   return (
     <div className='home'>
       <Stories />
-      <Post />    
+      <Post backColor={backColor}/>    
     </div>
   )
 }

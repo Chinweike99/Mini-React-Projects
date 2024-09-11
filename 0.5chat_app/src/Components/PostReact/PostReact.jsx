@@ -10,15 +10,20 @@ import { Comments } from '../Comments/Comments';
 
 
 
-export const PostReact = ({item}) => {
+export const PostReact = ({item, backColor}) => {
 
     const [liked, setLiked] = useState(false);
     const handleliked = () => {
         setLiked(!liked)
     }
 
+    const [showComments, setShowComments] = useState(false);
+    const handleShowComments =() => {
+        setShowComments(!showComments)
+    }
+
   return (
-    <div className='post'>
+    <div className='post' >
         <div className="container">
         <div className="user">
             <div className="userInfo">
@@ -42,10 +47,10 @@ export const PostReact = ({item}) => {
             <div>
                 <button onClick={handleliked}>
                     {liked?  <FavoriteOutlinedIcon style={{color: "red"}}/> :
-                    <FavoriteBorderOutlinedIcon />}
+                    <FavoriteBorderOutlinedIcon/>}
                 </button>
             </div>
-            <div className="item">
+            <div className="item" onClick={handleShowComments}>
                 <ForumOutlinedIcon/>
                 <span>13 Comments</span>
             </div>
@@ -54,7 +59,8 @@ export const PostReact = ({item}) => {
                 <span>4 shares</span>
             </div>
         </div>
-        <Comments />
+        {showComments ? <Comments /> : null}
+        
 
         </div> 
     </div>

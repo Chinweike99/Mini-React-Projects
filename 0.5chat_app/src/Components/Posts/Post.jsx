@@ -3,7 +3,7 @@ import './Post.scss'
 import assets from '../../assets/assets';
 import { PostReact } from '../PostReact/PostReact';
 
-export const Post = () => {
+export const Post = ({backColor}) => {
 
   const posts = [
     {id: 1, name: "Christabel Abel", userId: 1, img: `${assets.image1}`, desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book", profilePic: `${assets.image4}`},
@@ -17,12 +17,15 @@ export const Post = () => {
 
 
   return (
-    <div className="post">
-      {posts.map((item, index) => {
-        return (
-          <PostReact item={item} key={index}/>
-        )
-      })}
+    <div className="post" >
+        {posts.map((item, index) => {
+          return (
+            <div className="posts" style={{color: backColor? "black" : "#fff", background: backColor? "#ece6f1": "rgb(141, 112, 186)"}}>
+              <PostReact item={item} key={index}/>
+            </div>
+          )
+        })}
+      
     </div>
   )
 }

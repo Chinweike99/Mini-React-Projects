@@ -1,5 +1,6 @@
 .post{
-    
+    // border:  1px solid red;
+    // border-radius: 15px;
     .container{
         padding: 20px;
 
@@ -27,7 +28,7 @@
                         font-weight: 500;
                     }
                     .date{
-                        color: #5a5a5a;
+                        color: #1b1e27;
                         font-size: 12px;
                     }
                 }
@@ -41,7 +42,8 @@
                 width: 100%;
                 max-height: 600px;
                 border-radius: 20px;
-                object-fit: cover;
+                // object-fit: cover;
+                background-position: center;
                 margin-top: 20px;
             }
         }
@@ -63,7 +65,7 @@
             gap: 6px;
 
             span{
-                color: #5a5a5a;
+                // color: #1b1e27;
             }
         }
     }

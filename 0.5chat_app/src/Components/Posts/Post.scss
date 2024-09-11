@@ -1,5 +1,14 @@
 .post{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    // background: #ece6f1 ;
+    gap: 25px;
+
+    .posts{
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(222, 209, 241);
+        border-radius: 15px;
+        padding: 10px;
+    }
 }

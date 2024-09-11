@@ -2,6 +2,6 @@ import "./Profile.scss"
 
 export const Profile = () => {
   return (
-    <div>Profile</div>
+    <div className="profile">Profile</div>
   )
 }

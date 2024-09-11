@@ -40,7 +40,7 @@ function App() {
     {
       path: "/", element: (<ProtectedRoute><Layout /></ProtectedRoute> ),
       children: [
-        { path: "/", element: <Home /> },
+        { path: "/", element: <Home backColor={backColor} setBackColor={setBackColor}/> },
         { path: "/profile/:id",  element: <Profile /> }
       ]
     },

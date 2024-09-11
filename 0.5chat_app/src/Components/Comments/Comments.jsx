@@ -11,10 +11,21 @@ export const Comments = () => {
             <button>Send</button>
         </div>
         <div className="comments">
-            <img src={assets.image6} alt="" />
-            <div className='reply'>
-                <span>John Doe</span>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+            <div className='mainReply'>
+                <img src={assets.image6} alt="" />
+                <div className='reply'>
+                    <span>John Doe</span>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                    <span className='commentTime'>2 hours ago</span>
+                </div>
+            </div>
+            <div className='mainReply'>
+                <img src={assets.images1} alt="" />
+                <div className='reply'>
+                    <span >Christabel Abel</span>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                    <span className='commentTime'>15 minutes ago</span>
+                </div>
             </div>
         </div>
     </div>
