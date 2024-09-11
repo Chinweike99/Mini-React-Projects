@@ -45,5 +45,26 @@
                 margin-top: 20px;
             }
         }
+        .reaction{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            cursor: pointer;
+        }
+        button{
+            border: none;
+            outline: none;
+            background: inherit;
+            cursor: pointer;
+        }
+        .item{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            span{
+                color: #5a5a5a;
+            }
+        }
     }
 }

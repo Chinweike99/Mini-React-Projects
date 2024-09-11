@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './PostReact.scss'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import { Comments } from '../Comments/Comments';
 
 
 
 export const PostReact = ({item}) => {
+
+    const [liked, setLiked] = useState(false);
+    const handleliked = () => {
+        setLiked(!liked)
+    }
+
   return (
     <div className='post'>
         <div className="container">
@@ -29,7 +38,24 @@ export const PostReact = ({item}) => {
             <img src={item.img} alt="" />
         </div>
 
-        <div className="rection"></div>
+        <div className="reaction">
+            <div>
+                <button onClick={handleliked}>
+                    {liked?  <FavoriteOutlinedIcon style={{color: "red"}}/> :
+                    <FavoriteBorderOutlinedIcon />}
+                </button>
+            </div>
+            <div className="item">
+                <ForumOutlinedIcon/>
+                <span>13 Comments</span>
+            </div>
+            <div className="item">
+                <ShareOutlinedIcon />
+                <span>4 shares</span>
+            </div>
+        </div>
+        <Comments />
+
         </div> 
     </div>
   )
