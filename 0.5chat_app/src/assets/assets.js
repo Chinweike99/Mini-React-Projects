@@ -22,6 +22,14 @@ import tutorials from './tutorials.png'
 import image6 from './image6.jpg'
 import images1 from './images1.jpg'
 import img1 from './img1.jpg'
+import beach from './beach.jpeg'
+import familyHouse from './familyHouse.jpeg'
+import lady1 from './lady1.jpeg'
+import lady2 from './lady2.jpeg'
+import man1 from './man1.jpeg'
+import man2 from './man2.jpeg'
+import man3 from './man3.jpeg'
+
 
 const assets = {
     courses,
