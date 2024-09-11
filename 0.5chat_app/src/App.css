@@ -1,9 +1,9 @@
 *{
   margin: 0;
   padding: 0;
+  /* height: 100vh; */
 }
 
 .layDark{
   background-color: #141414;
-  /* height: 100%; */
 }
