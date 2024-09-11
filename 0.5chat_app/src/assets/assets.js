@@ -32,7 +32,7 @@ import man3 from './man3.jpeg'
 
 
 const assets = {
-    courses,
+    courses, beach, familyHouse,lady1, lady2, man1, man2,man3,
     events,image6, images1, img1,
     friends, fund, Gallery, gaming, group, market, memories,messages,videos, watch,tutorials,
     image1,
