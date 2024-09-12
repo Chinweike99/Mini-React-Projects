@@ -71,5 +71,34 @@
 
 
 @media (min-width: 200px) and (max-width: 900px){
-    
+    .post {
+        // width: 100%;
+    }
+    .reaction .item span{
+        display: flex;
+        // flex-direction: row;
+        display: none;
+        gap: none;
+    }
+    .reaction .reactonSecond .item .uiIcon{
+        margin-top: -10px;
+    }
+    // .post .container .user .userInfo .details .name{
+    //     font-size: 11px;
+    // }
+    // .post .container .user .userInfo .details .date{
+    //     display: none;
+    // }
+    // .post .container .content p{
+    //     font-size: 12px;
+    //     align-self: center;
+    //     text-align: justify;
+    // }
+    // .post .reaction{
+    //     font-size: 10px;
+    // }
+
+    // .post .reaction .uiIcon{
+    //     width: 16px;
+    // }
 }

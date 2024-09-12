@@ -13,10 +13,10 @@
     }
 }
 
-@media (min-width: 200px) and (max-width: 600px){
-    .post{
+@media (min-width: 200px) and (max-width: 900px){
+    .post .posts{
         width: 100%;
-        margin-bottom: 2px;
+        // margin: 0 -10%;
     }
 }
 

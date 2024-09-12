@@ -67,6 +67,12 @@ nav{
     nav{
         position: fixed;
     }
+    .right .hideSmall{
+        display: none;
+    }
+    .left .hideSmall{
+        display: none;
+    }
     .navBar{
         display: flex;
         /* flex-direction: row-reverse; */

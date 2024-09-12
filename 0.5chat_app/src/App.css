@@ -7,7 +7,9 @@
   background-color: #141414;
 }
 @media (min-width: 200px) and (max-width: 900px){
-  
+  .routes{
+    /* width: 100%; */
+  }
   .layDark{
     background-color: #141414;
   }
