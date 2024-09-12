@@ -26,7 +26,7 @@ export const NavBar = ({backColor, setBackColor}) => {
                 <Link to="/" style={{textDecoration: "none", color: "black"}}>
                     <span style={{color: backColor? "black" : "#fff"}}>CMedia</span>
                 </Link>
-                <HomeOutlinedIcon  />
+                <HomeOutlinedIcon  className='hideSmall'/>
                 {backColor? 
                 <NightlightOutlinedIcon onClick={handleColor}/>
                 : <LightModeOutlinedIcon onClick={handleColor}/>}
@@ -38,7 +38,7 @@ export const NavBar = ({backColor, setBackColor}) => {
             </div>
 
             <div className="right" style={{color: backColor? "black" : "#fff"}}>
-                <FileUploadOutlinedIcon />
+                <FileUploadOutlinedIcon className='hideSmall'/>
                 <MailOutlinedIcon />
                 <NotificationsActiveOutlinedIcon />
                 <img src={currentUser.profilePic} alt="" />

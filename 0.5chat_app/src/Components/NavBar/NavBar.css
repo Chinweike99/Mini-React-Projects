@@ -75,3 +75,9 @@ nav{
         gap: 5px;
     }
 }
+
+@media(max-width: 480px){
+    .search input{
+        display: none;
+    }
+}

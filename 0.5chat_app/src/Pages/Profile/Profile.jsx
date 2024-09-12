@@ -5,6 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import XIcon from '@mui/icons-material/X';
+import { Post } from "../../Components/Posts/Post";
 // import PlaceIcon from '@mui/icons-material/Place';
 // import LanguageIcon from '@mui/icons-material/Language';
 // import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
@@ -46,39 +47,22 @@ export const Profile = ({backColor}) => {
                       <hr />
                     </div>
                     <div>
-                      <button>Add</button>
-                      <button>Send Message</button>
+                      <button style={{color: backColor? "#fff" : "#fff", background: backColor? "rgb(8, 71, 190)": "rgb(141, 112, 186)"}}>Add friend</button>
+                      <button style={{color: backColor? "#fff" : "#fff", background: backColor? "rgb(8, 71, 190)": "rgb(141, 112, 186)"}}>Message</button>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* <div className="socials">
-                <a href="http://faceebook.com"><FacebookIcon  /></a>
-                <a href="http://linkedIn.com"><LinkedInIcon /></a>
-                <a href="http://instagram.com"><InstagramIcon /></a>
-                <a href="http://pintrest.com"><PinterestIcon /></a>
-                <a href="http://twitter.com"><XIcon /></a>
-              </div> */}
             </div>
           </div>
 
         </div>
       </div>
-      <div >
-        <div className="userInfo">
-          <div className="left">
-            <a href="http://faceebook.com"><FacebookIcon fontSize="large"/></a>
-            <a href="http://linkedIn.com"><LinkedInIcon /></a>
-            <a href="http://instagram.com"><InstagramIcon /></a>
-            <a href="http://pintrest.com"><PinterestIcon /></a>
-            <a href="http://twitter.com"><XIcon /></a>
-          </div>
-
-          <div className="center"></div>
-          Hhhhhhiojo;klhljwv jlklj.lw  ulhkhk ujhuhk uuihl '
-          <div className="right"></div>
+      <div className="postDiv" >
+        <div className="postsFromPosts" >
+          <Post style={{color: backColor? "black" : "#fff", background: backColor? "#ece6f1": "rgb(141, 112, 186)"}}/>
         </div>
+        
       </div>
       
       
