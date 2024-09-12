@@ -16,3 +16,12 @@
         margin-left: 18%;
     }
 }
+
+@media (max-width: 480px){
+    .home{
+        top: -51px;
+    }
+    .posts{
+        top: 51px;
+    }
+}

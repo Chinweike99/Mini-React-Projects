@@ -57,13 +57,15 @@ hr{
 @media(max-width: 480px){
     .leftMainBar{
         top: 51px;
+        width: 5%;
         left: 0;
+        padding-top: 20px;
     }
     .content .topSec p{
-        font-size: 12px;
+        font-size: 10px;
     }
     h4{
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
@@ -75,8 +77,8 @@ hr{
         flex-direction: column;
     }
     .topSec img{
-        width: 28px;
-        height: 28px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
     }
     .topSec p{

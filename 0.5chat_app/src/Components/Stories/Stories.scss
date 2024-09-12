@@ -77,3 +77,34 @@
         }
     }
 }
+
+@media (max-width: 480px){
+    .stories{
+        top: -30px;
+        margin-bottom: 2px;
+        height: 130px;
+    }
+    .stories .myStory{
+        flex: 1;
+        width: 12%;
+        height: 100%;
+    }
+    .stories .myStory p{
+        font-size: 8px;
+        bottom: 3px;
+        left: 1px;
+        color: rgb(129, 9, 241);
+        background: #eeeeef;
+        font-weight: 600;
+    }
+    .stories .cross{
+        border: 1px solid #fff;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        border: none;
+        background: none;
+        left: 4%;
+        bottom: 39%;
+    }
+}

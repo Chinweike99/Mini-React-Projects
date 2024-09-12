@@ -25,6 +25,7 @@ export const RightBar = ({backColor}) => {
           })}
           </div>
         </div>
+        
 
       {/* MIDDLE SECTION */}
       <div className='topDiv'>
