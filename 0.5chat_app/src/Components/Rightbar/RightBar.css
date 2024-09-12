@@ -123,46 +123,9 @@
     -moz-box-shadow: -16px 11px 77px 2px rgba(0,0,0,0.75);
 }
 
-@media (max-width: 480px){
+@media (min-width: 200px) and (max-width: 600px){
     .rightBar{
-        top: 51px;
-    }
-    .rightMain h4{
-        font-size: 10px;
-    }
-    .rightBar .topDiv .content img{
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
-    }
-    .rightBar .topDiv .content label{
-        font-size: 11px;
-    }
-    .rightBar .topDiv .content button{
-        width: 2.1rem;
-        margin-top: 0;
-        border: none;
-        font-size: 10px;
-    }
-
-    .content .online{
-        height: 7px;
-        width: 7px;
-        border-radius: 50%;
-        background: green;
-        position: absolute;
-        top: 10px;
-        left: 15px;
-    }
-
-    .rightBar .bottomDiv .content img{
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-    }
-
-    .bottomDiv .rightMain .content label{
-        font-size: 11px;
+        display: none;
     }
 }
 
