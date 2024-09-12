@@ -53,6 +53,22 @@ hr{
     margin-top: 30px;
 }
 
+
+@media(max-width: 480px){
+    .leftMainBar{
+        top: 51px;
+        left: 0;
+    }
+    .content .topSec p{
+        font-size: 12px;
+    }
+    h4{
+        font-size: 12px;
+    }
+}
+
+
+
 @media (max-width: 900px){
     .topSec{
         display: flex;

@@ -64,6 +64,9 @@ nav{
 }
 
 @media (max-width: 900px){
+    nav{
+        position: fixed;
+    }
     .navBar{
         display: flex;
         /* flex-direction: row-reverse; */
@@ -79,5 +82,17 @@ nav{
 @media(max-width: 480px){
     .search input{
         display: none;
+    }
+    .right .hideSmall{
+        display: none;
+    }
+    .left span{
+        font-size: 15px;
+    }
+    .left .hideSmall{
+        display: none;
+    }
+    .navBar{
+        padding:0px 25px;
     }
 }

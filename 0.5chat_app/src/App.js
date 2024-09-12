@@ -20,7 +20,7 @@ function App() {
     return (
       <div id='theme-dark' className={backColor? 'layout': 'layDark'}>
         <NavBar className="navBar" backColor={backColor} setBackColor={setBackColor}/>
-        <div style={{ display: "flex", marginTop: "70px", padding: "1px"}}>
+        <div className='routes' style={{ display: "flex", marginTop: "70px", padding: "1px"}}>
           <LeftBar backColor={backColor} setBackColor={setBackColor}/>
           <Outlet />
           <RightBar backColor={backColor} setBackColor={setBackColor}/>

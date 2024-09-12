@@ -21,7 +21,7 @@ export const LeftBar = ({backColor}) => {
                     <img src={item.src} alt={item.label} />
                     <p>{item.label}</p>
                   </div>
-              )   
+              )  
             })}
         </div>
         <hr />

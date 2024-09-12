@@ -7,3 +7,8 @@
 .layDark{
   background-color: #141414;
 }
+@media (max-width: 480px){
+  .routes{
+    margin-top: -30px;
+  }
+}

@@ -30,7 +30,7 @@ export const NavBar = ({backColor, setBackColor}) => {
                 {backColor? 
                 <NightlightOutlinedIcon onClick={handleColor}/>
                 : <LightModeOutlinedIcon onClick={handleColor}/>}
-                <WidgetsOutlinedIcon />
+                <WidgetsOutlinedIcon className='hideSmall'/>
             </div>
             <div className="search">
                 <input type="text" placeholder='Search'/>
@@ -39,7 +39,7 @@ export const NavBar = ({backColor, setBackColor}) => {
 
             <div className="right" style={{color: backColor? "black" : "#fff"}}>
                 <FileUploadOutlinedIcon className='hideSmall'/>
-                <MailOutlinedIcon />
+                <MailOutlinedIcon className='hideSmall'/>
                 <NotificationsActiveOutlinedIcon />
                 <img src={currentUser.profilePic} alt="" />
                 <span>{currentUser.name}</span>
