@@ -12,9 +12,11 @@
         padding: 10px;
     }
 }
-@media (max-width: 480px){
+
+@media (min-width: 200px) and (max-width: 600px){
     .post{
-        // width: 40%;
+        width: 100%;
+        margin-bottom: 2px;
     }
 }
 

@@ -52,11 +52,11 @@ export const PostReact = ({item, backColor}) => {
             </div>
             <div  className="item" onClick={handleShowComments}>
                 <ForumOutlinedIcon className='uiIcon'/>
-                <span>13 Comments</span>
+                <span>Comments</span>
             </div>
             <div className="item">
                 <ShareOutlinedIcon className='uiIcon'/>
-                <span>4 shares</span>
+                <span>shares</span>
             </div>
         </div>
         {showComments ? <Comments /> : null}

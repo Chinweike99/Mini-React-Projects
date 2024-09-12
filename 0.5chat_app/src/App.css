@@ -1,15 +1,14 @@
 *{
   margin: 0;
   padding: 0;
-  /* height: 100vh; */
 }
 
 .layDark{
   background-color: #141414;
 }
-@media (min-width: 200px) and (max-width: 600px){
-  .routes{
-    width: 100%;
-    margin: 0;
+@media (min-width: 200px) and (max-width: 900px){
+  
+  .layDark{
+    background-color: #141414;
   }
 }

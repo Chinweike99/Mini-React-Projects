@@ -24,7 +24,7 @@ export const Stories = () => {
                 <img src={currentUser.profilePic} alt="" />
                 <p>{currentUser.name}</p>
             </div>
-
+            
             <div className="cross">
                 <AddOutlinedIcon />
             </div>
