@@ -44,18 +44,18 @@ export const PostReact = ({item, backColor}) => {
         </div>
 
         <div className="reaction">
-            <div>
-                <button onClick={handleliked}>
-                    {liked?  <FavoriteOutlinedIcon style={{color: "red"}}/> :
-                    <FavoriteBorderOutlinedIcon/>}
+            <div className='reactonSecond'>
+                <button className="item"  onClick={handleliked}>
+                    {liked?  <FavoriteOutlinedIcon style={{color: "red"}} className='uiIcon'/> :
+                    <FavoriteBorderOutlinedIcon className='uiIcon'/>}
                 </button>
             </div>
-            <div className="item" onClick={handleShowComments}>
-                <ForumOutlinedIcon/>
+            <div  className="item" onClick={handleShowComments}>
+                <ForumOutlinedIcon className='uiIcon'/>
                 <span>13 Comments</span>
             </div>
             <div className="item">
-                <ShareOutlinedIcon />
+                <ShareOutlinedIcon className='uiIcon'/>
                 <span>4 shares</span>
             </div>
         </div>
