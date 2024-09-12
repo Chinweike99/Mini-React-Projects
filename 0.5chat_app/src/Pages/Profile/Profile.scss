@@ -3,13 +3,15 @@
     margin-right: 26.2%;
     width: 70%;
     margin-bottom: 20px;
+    height: 100vh;
     // margin-top: 5px;
     // border: 1px solid red;
     // overflow: hidden;
     // position: relative;
 
     .mainprofileContnent{
-        margin-bottom: 20%;
+        margin-bottom: 15%;
+        background-color: red;
     
     .backimages{
         position: relative;
@@ -29,7 +31,8 @@
             position: absolute;
             width: 100%;
             top: 210px;
-            border-bottom: 2px solid red;
+            // border-bottom: 2px solid red;
+            padding-bottom: 15px;
             // background-color: grey;
             // margin: 0 5%;
 
@@ -49,42 +52,68 @@
                 .mainProfile{
                     display: flex;
                     align-items: center;
+                    width: 100%;
 
                     .aboutImg{
                         margin-left: 20px;
                         flex: 1;
-                        width: 80%;
+                        margin-right: 20px;
+                        width: 100%;
+                        padding: 0 5px;
 
-                        p{
+                        h3{
                             margin-top: 50px;
                         }
 
-                        .friendsImg{
+                        .group{
                             display: flex;
-                            flex: 1;
-                            margin-top: 10px;
-                            
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                            flex-wrap: wrap;
 
-                            img{
-                                width: 35px;
-                                height: 35px;
-                                border-radius: 50%;
-                                object-fit: cover;
+                            .friendsImg{
+                                display: flex;
+                                // flex: 1;
+                                margin-top: 10px;
+                                
+    
+                                img{
+                                    width: 35px;
+                                    height: 35px;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                }
                             }
+                            .groupSocial{
+                                padding-top: 10px;
+
+                                .social{
+                                    display: flex;
+                                    gap: 10px;
+                                }
+
+                                hr{
+                                    margin-top: 0;
+                                }
+                            }
+
+                            button{
+                                background: blue;
+                                padding: 5px 10px;
+                                color: #fff;
+                                font-size: 15px;
+                                border: none;
+                                margin-right: 10px;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+                            
                         }
+                        
                     }
                 }
                 
-                .socials{
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                    margin-right: 20px;
-                    
-                    a{
-                        height: 22px;
-                    }
-                }
             }
         }
         
@@ -95,6 +124,17 @@
 }
 
 @media (max-width: 900px){
+    .mainprofileContnent{
+        margin-bottom: 50%;
+    }
+    .backgroundImages{
+        max-height: 180px;
+        margin-bottom: 330px;
+    }
+    .profileContainer{
+        margin-top: -80px;
+    }
+
     .images .mainProfile{
         display: flex;
         flex-direction: column;
@@ -102,7 +142,58 @@
         justify-content: center;
         gap: 0;
     }
+    .images .mainProfile img{
+        margin-bottom: 15px;
+        margin-left: 0px;
+    }
     .images .mainProfile .aboutImg{
         margin-top: -50px;
+    }
+
+    button{
+        margin-top: 10px;
+    }
+
+    .group{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .aboutImg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+
+
+
+@media (min-width: 900px) and (max-width: 1700px){
+    .backgroundImages{
+        margin-bottom: 180px;
+    }
+    button{
+        margin-top: 10px;
+    }
+    .aboutImg{
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+    }
+    
+}
+@media (min-width: 900px) and (max-width: 1500px){
+    .group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .aboutImg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
