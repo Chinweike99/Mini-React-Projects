@@ -7,11 +7,12 @@ import postRoutes from "./Routes/posts.js";
 import commentsRoutes from "./Routes/comments.js";
 import authRoutes from "./Routes/auth.js";
 import likesRoutes from "./Routes/likes.js";
-
+const app = express();
 
 const port = 3200;
 
-const app = express();
+// Middlewares: Without middlewares sedning json objects won't be possible
+app.use(express.json())
 
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
