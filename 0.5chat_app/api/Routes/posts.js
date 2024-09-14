@@ -1,9 +1,8 @@
 import express from 'express';
+import { } from '../controllers/post.js';
 
-const location = express.Router();
+const router = express.Router();
 
-location.get('/location', (req, res) => {
-    res.send("This is your new location")
-})
+router.get("");
 
-export  default location;
+export default router;
