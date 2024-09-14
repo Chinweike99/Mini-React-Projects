@@ -6,8 +6,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import XIcon from '@mui/icons-material/X';
 import { Post } from "../../Components/Posts/Post";
-// import PlaceIcon from '@mui/icons-material/Place';
-// import LanguageIcon from '@mui/icons-material/Language';
+import PlaceIcon from '@mui/icons-material/Place';
+import LanguageIcon from '@mui/icons-material/Language';
 // import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 
@@ -43,6 +43,10 @@ export const Profile = ({backColor}) => {
                         <a href="http://instagram.com"><InstagramIcon style={{color: backColor? "black" : "#fff"}}/></a>
                         <a href="http://pintrest.com"><PinterestIcon style={{color: backColor? "black" : "#fff"}}/></a>
                         <a href="http://twitter.com"><XIcon style={{color: backColor? "black" : "#fff"}}/></a>
+                        <div className="location">
+                          <a href="http://twitter.com"><PlaceIcon style={{color: backColor? "black" : "#fff", fontSize: "small"}}/></a>
+                          <a href="http://twitter.com"><LanguageIcon style={{color: backColor? "black" : "#fff", fontSize: "small"}}/></a>
+                        </div>
                       </div>
                       <hr />
                     </div>
