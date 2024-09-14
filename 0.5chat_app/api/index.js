@@ -1,13 +1,17 @@
-const express = require('express');
-const pg = require('pg');
-const fs = require ('fs');
-const multer =  require('multer');
+import express from 'express';
+import pg from 'pg';
+import fs from  'fs';
+import multer from 'multer';
+import userRoutes from "./Routes/users.js";
+import location from "./Routes/posts.js";
+
 
 const port = 3200;
 
 const app = express();
 
-
+app.use("/api/users", userRoutes);
+app.use("/api/users", location)
 
 app.get('/', (req, res) => {
     res.send("Welcome")
