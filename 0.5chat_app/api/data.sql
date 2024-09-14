@@ -15,7 +15,7 @@ CREATE TABLE post(
     id SERIAL PRIMARY KEY,
     descr TEXT,
     img BYTEA,
-    userId INT REFERENCES account_user(id),
+    userId INT REFERENCES account_user(id) ON DELETE CASCADE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -23,7 +23,7 @@ CREATE TABLE comments(
     id SERIAL PRIMARY KEY,
     descr TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    commentsUserId INT NOT NULL REFERENCES account_user(id),
+    commentsUserId INT NOT NULL REFERENCES account_user(id) ON DELETE CASCADE,
     postId INT REFERENCES post(id)
 );
 
