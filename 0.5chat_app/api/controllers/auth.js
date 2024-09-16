@@ -1,5 +1,8 @@
 import { db } from "../connect.js";
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const register = (req, res) => {
     console.log(req.body);
@@ -44,18 +47,35 @@ export const login = (req, res) => {
 
     const q = "SELECT * FROM account_user WHERE username = $1";
 
-    db.query(q, [req.body.username], (err, data) => {
+    db.query(q, [req.body.username], (err, result) => {
         if(err){
             return res.status(500).json(err)
         }
-        if(data.rows.length === 0){
-            return res.status(404).json("User not found")
+        // if(result.rows.length === 0){
+        //     return res.status(404).json("User not found")
+        // }
+
+        const user = result.rows[0];
+
+        if (!user) {
+            console.log("user does not exist")
+            return res.status(404).json("User not found");
         }
 
-        const checkPassword = bcrypt.compareSync(req.body.password, data[0].password);
+        const checkPassword = bcrypt.compareSync(req.body.password, user.password);
 
-        if(!checkPassword) return res.status(400).json("Wrong password or Username")
+        if(!checkPassword) return res.status(400).json("Wrong password or Username");
+        
+        // JWT: for a user to be able to delete a post
+        const token = jwt.sign({id: user.id}, process.env.SECRET_KEY);
 
+        const {password, ...others} = user // Ensures hashedPassword isn't returned
+
+        res.cookie("accessToken", token,{
+            httpOnly: true
+        }).status(200).json(others);
+
+        console.log(result.rows)
     })
 
 }
