@@ -14,8 +14,14 @@ const app = express();
 const port = 3200;
 
 // Middlewares: Without middlewares sedning json objects won't be possible
+app.use((req,res,next) => {
+    res.header("Access-control-Allow-Credentials", true)
+    next();
+})
 app.use(express.json())
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:3200"
+}));
 app.use(cookieParser());
 
 app.use("/api/users", userRoutes);

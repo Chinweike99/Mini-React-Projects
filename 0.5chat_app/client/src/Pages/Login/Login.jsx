@@ -1,15 +1,38 @@
 import { useContext, useState } from 'react'
 import './Login.scss'
 import { AuthContext } from '../../Context/authContext';
+import axios from 'axios';
 
 export const Loggin = () => {
 
   const {login} = useContext(AuthContext);
   const [showLogin, setShowLogin] = useState(true);
-
-  const handleLogin = () => {
-    login();
+  const [error, setErr] = useState(null);
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password: "",
+    name: ""
+  });
+  
+  const handleInput = (e) => {
+    setInputs(prev=>({...prev, [e.target.name]:e.target.value}))
   }
+
+  console.log(inputs);
+
+
+  const handleLogin = async(e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:3200/api/auth/register", inputs)
+    } catch (error) {
+      setErr(error.response);
+    }
+  }
+
+  console.log(error)
 
   const hanldeShowLogin = () =>{
     setShowLogin(!showLogin)
@@ -30,14 +53,19 @@ export const Loggin = () => {
           <div className="rightDiv">
                 <h1>{showLogin? "Welcome back.." : "Register"}</h1>
                 <form action="">
-                    <input type="text" placeholder="Username" />
-                    {!showLogin? <input type="text"  placeholder="Full Name"/> : null}
+                    <input onChange={handleInput} type="text" placeholder="Username" name='username'required/>
+                    {!showLogin? <input type="text"  placeholder="Full Name" name='name'/> : null}
                     
                     
-                    {!showLogin?  <input type="email" placeholder="example@gmail.com"/> : null}
-                    <input type="password" placeholder='Password'/>
+                    {!showLogin?  <input type="email" placeholder="example@gmail.com" name='email' onChange={handleInput} required/> : null}
+                    <input type="password" placeholder='Password' name='password' onChange={handleInput} />
                     {!showLogin? <input type="password" placeholder='Confirm password'/> : null}
+                    {error && error}
+
+                    {/* <p style={{color: "red"}}>{error}</p> */}
+
                     <button onClick={handleLogin}>{showLogin? "Login" : "Register"}</button>
+                    {/* <button onClick={handleLogin}>Submit</button> */}
                 </form>
           </div>
       </div>

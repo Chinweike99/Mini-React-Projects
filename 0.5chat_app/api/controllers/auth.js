@@ -82,6 +82,9 @@ export const login = (req, res) => {
 
 
 // LOG OUT
-export const logout = () => {
-
+export const logout = (req, res) => {
+    res.clearCookie("accessToken",{
+        secure: true,
+        sameSite: "none" // This allows to remove a session regardless of the port
+    }).status(200).json("User logged out")
 }

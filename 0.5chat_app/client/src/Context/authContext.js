@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import assets from "../assets/assets";
+import axios from "axios";
 
 export const AuthContext = createContext();
 
@@ -8,15 +9,17 @@ export const AuthContextProvider = ({children}) => {
         JSON.parse(localStorage.getItem("user")) || null
     );
 
-    const login = () => {
-        const userData = { id: 1, name: "Christabel Abel", profilePic: `${assets.images1}` };
-        setCurrentUser(userData);
-        localStorage.setItem("user", JSON.stringify(userData));
+    const login = async(inputs) => {
+        const res = axios.post("http://localhost:3200/api/auth/register", inputs, {
+            withCredentials: true // This is important, because you are working with cookies else there'll be errors
+        });
+
+        setCurrentUser(res.data)
     };
     
     useEffect(() => {
-        login();
-    }, [])
+        localStorage.setItem("user", JSON.stringify(currentUser));
+    }, [currentUser])
     
     
     return(
