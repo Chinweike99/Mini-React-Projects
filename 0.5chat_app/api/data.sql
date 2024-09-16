@@ -5,7 +5,7 @@ CREATE TABLE account_user (
     name TEXT NOT NULL,
     password VARCHAR(200),
     cover_pic BYTEA,
-    profile_pic BYTEA NOT NULL,
+    profile_pic BYTEA,
     city VARCHAR(100),
     website TEXT
 );
