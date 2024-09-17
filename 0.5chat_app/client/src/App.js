@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider, Outlet, Navigate} from 'react-rout
 import { useContext, useState } from 'react';
 import './style.scss';
 import { AuthContext } from './Context/authContext';
+import { Register } from './Pages/Register/Register';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
 
   const ProtectedRoute = ({ children }) => {
     if(!currentUser){
-      return <Navigate to="/register" />
+      return <Navigate to="/login" />
     }
     return children;
   }
@@ -44,7 +45,8 @@ function App() {
         { path: "/profile/:id",  element: <Profile backColor={backColor} setBackColor={setBackColor}/> }
       ]
     },
-    { path: "/register", element: <Loggin/> }
+    { path: "/register", element: <Register/> },
+    { path: "/login", element: <Loggin/> }
   ])
 
   return (

@@ -20,7 +20,7 @@ export const Post = ({backColor}) => {
     <div className="post" >
         {posts.map((item, index) => {
           return (
-            <div className="posts" style={{color: backColor? "black" : "#fff", background: backColor? "#ece6f1": "rgb(141, 112, 186)"}}>
+            <div key={index} className="posts" style={{color: backColor? "black" : "#fff", background: backColor? "#ece6f1": "rgb(141, 112, 186)"}}>
               <PostReact item={item} key={index}/>
             </div>
           )

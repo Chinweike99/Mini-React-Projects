@@ -13,7 +13,7 @@ const app = express();
 
 const port = 3200;
 
-// Middlewares: Without middlewares sedning json objects won't be possible
+// Middlewares: Without middlewares sending json objects won't be possible
 app.use((req,res,next) => {
     res.header("Access-control-Allow-Credentials", true)
     next();
@@ -30,9 +30,7 @@ app.use("/api/comments", commentsRoutes);
 app.use("/api/likes", likesRoutes);
 app.use("/api/auth", authRoutes);
 
-app.get('/', (req, res) => {
-    res.send("Welcome")
-})
+
 
 app.listen(port, (req, res)=> {
     console.log(`LISTENING ON PORT http://localhost:${port}`)

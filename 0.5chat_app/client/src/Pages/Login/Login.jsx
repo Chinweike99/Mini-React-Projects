@@ -2,41 +2,38 @@ import { useContext, useState } from 'react'
 import './Login.scss'
 import { AuthContext } from '../../Context/authContext';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export const Loggin = () => {
 
   const {login} = useContext(AuthContext);
-  const [showLogin, setShowLogin] = useState(true);
+  // const [showLogin, setShowLogin] = useState(true);
   const [error, setErr] = useState(null);
   const [inputs, setInputs] = useState({
     username: "",
-    email: "",
-    password: "",
-    name: ""
+    password: ""
   });
   
   const handleInput = (e) => {
     setInputs(prev=>({...prev, [e.target.name]:e.target.value}))
   }
 
-  console.log(inputs);
+  // console.log(inputs);
 
 
   const handleLogin = async(e) => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3200/api/auth/register", inputs)
+      await login(inputs)
     } catch (error) {
+      console.error(error)
       setErr(error.response);
     }
   }
 
   console.log(error)
 
-  const hanldeShowLogin = () =>{
-    setShowLogin(!showLogin)
-  }
 
 
   return (
@@ -47,25 +44,26 @@ export const Loggin = () => {
             <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
 
             <span>Do you have an account ?</span>
-            <button onClick={hanldeShowLogin}>{showLogin? "Register" : "Login"}</button>
+            <Link to="/register">
+              <button>Register</button>
+            </Link>
+            
           </div>
 
           <div className="rightDiv">
-                <h1>{showLogin? "Welcome back.." : "Register"}</h1>
+                <h1>Welcome Back</h1>
                 <form action="">
-                    <input onChange={handleInput} type="text" placeholder="Username" name='username'required/>
-                    {!showLogin? <input type="text"  placeholder="Full Name" name='name'/> : null}
-                    
-                    
-                    {!showLogin?  <input type="email" placeholder="example@gmail.com" name='email' onChange={handleInput} required/> : null}
+                    <p></p>
+                    <input onChange={handleInput} type="text" placeholder="Username" name='username'/>
+
+                    {/* <input type="text"  placeholder="Full Name" name='name'/>
+                    <input type="email" placeholder="example@gmail.com" name='email' onChange={handleInput} /> */}
+
                     <input type="password" placeholder='Password' name='password' onChange={handleInput} />
-                    {!showLogin? <input type="password" placeholder='Confirm password'/> : null}
+
+                    {/* <input type="password" placeholder='Confirm password'/>  */}
                     {error && error}
-
-                    {/* <p style={{color: "red"}}>{error}</p> */}
-
-                    <button onClick={handleLogin}>{showLogin? "Login" : "Register"}</button>
-                    {/* <button onClick={handleLogin}>Submit</button> */}
+                    <button onClick={handleLogin}>Login</button>
                 </form>
           </div>
       </div>

@@ -10,7 +10,7 @@ export const AuthContextProvider = ({children}) => {
     );
 
     const login = async(inputs) => {
-        const res = axios.post("http://localhost:3200/api/auth/register", inputs, {
+        const res = await axios.post("http://localhost:3200/api/auth/register", inputs, {
             withCredentials: true // This is important, because you are working with cookies else there'll be errors
         });
 
