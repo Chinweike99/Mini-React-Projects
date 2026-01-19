@@ -1,0 +1,11 @@
+{
+  "name": "com.domain.app.lightningapp",
+  "description": "lightning-app",
+  "scripts": {
+    "start": "lng dev",
+    "build": "lng build"
+  },
+  "dependencies": {
+    "@lightningjs/sdk": "^5.5.6"
+  }
+}
